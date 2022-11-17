@@ -1,7 +1,7 @@
 {
   "generator-jhipster-agilekip:0.0.12": {
     "promptValues": {
-      "packageName": "org.agilekip.tutorials.ticket"
+      "packageName": "org.agilekip.tutorials.travel"
     }
   },
   "generator-jhipster:7.0.1": {

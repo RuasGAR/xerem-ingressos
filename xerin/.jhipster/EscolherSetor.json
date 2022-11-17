@@ -1,0 +1,30 @@
+{
+  "fields": [
+    {
+      "fieldName": "nomeEstadio",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "setorEstadio",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assentoEstadio",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityType": "user-task-form",
+  "processBpmnId": "ProcessoIngresso",
+  "processEntityName": "ProcessoIngresso",
+  "taskBpmnId": "EscolherSetor",
+  "domainEntityName": "Ingresso",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "EscolherSetor",
+  "changelogDate": "20210401000003",
+  "skipFakeData": true
+}

@@ -1,0 +1,37 @@
+{
+  "xeremIngressosApp": {
+    "processoIngresso": {
+      "home": {
+        "title": "Processo Ingressos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Processo Ingresso",
+        "createOrEditLabel": "Criar ou editar Processo Ingresso",
+        "notFound": "Nenhum Processo Ingresso encontrado"
+      },
+      "created": "Um novo Processo Ingresso foi criado com o identificador {{ param }}",
+      "updated": "Um Processo Ingresso foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Processo Ingresso foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Processo Ingresso {{ id }}?"
+      },
+      "detail": {
+        "title": "Processo Ingresso"
+      },
+      "id": "ID",
+      "horarioJogo": "Horario Jogo",
+      "timeMandante": "Time Mandante",
+      "timeVisitante": "Time Visitante",
+      "data": "Data",
+      "nomeEstadio": "Nome Estadio",
+      "setorEstadio": "Setor Estadio",
+      "assentoEstadio": "Assento Estadio",
+      "nomeComprador": "Nome Comprador",
+      "cpfComprador": "Cpf Comprador",
+      "nascimentoComprador": "Nascimento Comprador",
+      "numeroCartao": "Numero Cartao",
+      "validadeCartao": "Validade Cartao",
+      "codigoCartao": "Codigo Cartao",
+      "quantidadeDeIngressos": "Quantidade De Ingressos"
+    }
+  }
+}

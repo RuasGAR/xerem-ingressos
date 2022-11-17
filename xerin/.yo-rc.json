@@ -26,11 +26,11 @@
     "dtoSuffix": "DTO",
     "testFrameworks": [],
     "pages": [],
-    "creationTimestamp": 1668641491918,
+    "creationTimestamp": 1668665476751,
     "serviceDiscoveryType": false,
     "reactive": false,
     "authenticationType": "jwt",
-    "packageName": "org.agilekip.tutorials.ticket",
+    "packageName": "org.agilekip.tutorials.travel",
     "serverPort": "8080",
     "cacheProvider": "ehcache",
     "enableHibernateCache": true,
@@ -48,10 +48,11 @@
     "clientTheme": "none",
     "enableTranslation": true,
     "nativeLanguage": "en",
-    "packageFolder": "org/agilekip/tutorials/ticket",
-    "jwtSecretKey": "MjQ1YWU3OTliYTZjYWZmYmFjNjJiMWFmNmYwOTQ0NDA4MDU4YWE1OWExNGNmM2U5ZGRlZTk1MGNlMTczMDU0Mzg0NmEzOWM3NWJlMWFmZjEyZWJjMWEwOTZjZjIwNjhjZmM1NjIyOTU1NGJkY2M5ODExNjkxZmFhOWNhYzI4YmU=",
+    "packageFolder": "org/agilekip/tutorials/travel",
+    "jwtSecretKey": "NjM2MzY3YWRiZTVhYzEwNjk2NjliZDRjNDJlMmZjZWNjOTUzNzE4ODViYTQzNGJjZjI4ZWRmNDMyNWU0YzRiZjFmZjExNzYzZTM4NTIxODUzOTg2OTQzYmMyZWY4MmIwNzQ0ZDNhOGZhZGEyZTU1ZjdjMDA1YmI0NTViZmExOGE=",
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
-    "languages": ["en", "pt-br"]
+    "languages": ["en", "pt-br"],
+    "entities": ["Ingresso"]
   }
 }

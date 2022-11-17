@@ -4,7 +4,7 @@
 <configuration scan="true">
     <include resource="org/springframework/boot/logging/logback/base.xml"/>
 
-    <logger name="org.agilekip.tutorials.ticket" level="INFO"/>
+    <logger name="org.agilekip.tutorials.travel" level="INFO"/>
 
     <logger name="tech.jhipster" level="WARN"/>
 

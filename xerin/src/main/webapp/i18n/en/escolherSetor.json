@@ -1,0 +1,26 @@
+{
+  "xeremIngressosApp": {
+    "escolherSetor": {
+      "home": {
+        "title": "Escolher Setors",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Escolher Setor",
+        "createOrEditLabel": "Create or edit a Escolher Setor",
+        "notFound": "No Escolher Setors found"
+      },
+      "created": "A new Escolher Setor is created with identifier {{ param }}",
+      "updated": "A Escolher Setor is updated with identifier {{ param }}",
+      "deleted": "A Escolher Setor is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Escolher Setor {{ id }}?"
+      },
+      "detail": {
+        "title": "Escolher Setor"
+      },
+      "id": "ID",
+      "nomeEstadio": "Nome Estadio",
+      "setorEstadio": "Setor Estadio",
+      "assentoEstadio": "Assento Estadio"
+    }
+  }
+}

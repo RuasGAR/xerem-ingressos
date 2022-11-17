@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<databaseChangeLog
+    xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+    xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.3.xsd
+                        http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd">
+
+    <!--
+        Added the entity Confirmacao.
+    -->
+    <changeSet id="20210401000004-1" author="jhipster">
+        <createTable tableName="confirmacao">
+            <column name="id" type="bigint">
+                <constraints primaryKey="true" nullable="false"/>
+            </column>
+            <column name="quantidade_de_ingressos" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="time_mandante" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="time_visitante" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="horario_jogo" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="data" type="date">
+                <constraints nullable="true" />
+            </column>
+            <column name="nome_estadio" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="setor_estadio" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="assento_estadio" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nome_comprador" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="cpf_comprador" type="varchar(255)">
+                <constraints nullable="true" />
+            </column>
+            <column name="nascimento_comprador" type="date">
+                <constraints nullable="true" />
+            </column>
+            <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->
+        </createTable>
+    </changeSet>
+
+    <!-- jhipster-needle-liquibase-add-changeset - JHipster will add changesets here -->
+</databaseChangeLog>

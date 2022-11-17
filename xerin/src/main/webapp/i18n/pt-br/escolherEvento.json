@@ -1,0 +1,27 @@
+{
+  "xeremIngressosApp": {
+    "escolherEvento": {
+      "home": {
+        "title": "Escolher Eventos",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Escolher Evento",
+        "createOrEditLabel": "Criar ou editar Escolher Evento",
+        "notFound": "Nenhum Escolher Evento encontrado"
+      },
+      "created": "Um novo Escolher Evento foi criado com o identificador {{ param }}",
+      "updated": "Um Escolher Evento foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Escolher Evento foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Escolher Evento {{ id }}?"
+      },
+      "detail": {
+        "title": "Escolher Evento"
+      },
+      "id": "ID",
+      "horarioJogo": "Horario Jogo",
+      "timeMandante": "Time Mandante",
+      "timeVisitante": "Time Visitante",
+      "data": "Data"
+    }
+  }
+}

@@ -17,7 +17,7 @@ logging:
   level:
     ROOT: INFO
     tech.jhipster: INFO
-    org.agilekip.tutorials.ticket: INFO
+    org.agilekip.tutorials.travel: INFO
 
 management:
   metrics:
@@ -101,7 +101,7 @@ jhipster:
         # - In the JHipster Registry (which includes a Spring Cloud Config server)
         # - In a separate `application-prod.yml` file, in the same folder as your executable JAR file
         # - In the `JHIPSTER_SECURITY_AUTHENTICATION_JWT_BASE64_SECRET` environment variable
-        base64-secret: MjQ1YWU3OTliYTZjYWZmYmFjNjJiMWFmNmYwOTQ0NDA4MDU4YWE1OWExNGNmM2U5ZGRlZTk1MGNlMTczMDU0Mzg0NmEzOWM3NWJlMWFmZjEyZWJjMWEwOTZjZjIwNjhjZmM1NjIyOTU1NGJkY2M5ODExNjkxZmFhOWNhYzI4YmU=
+        base64-secret: NjM2MzY3YWRiZTVhYzEwNjk2NjliZDRjNDJlMmZjZWNjOTUzNzE4ODViYTQzNGJjZjI4ZWRmNDMyNWU0YzRiZjFmZjExNzYzZTM4NTIxODUzOTg2OTQzYmMyZWY4MmIwNzQ0ZDNhOGZhZGEyZTU1ZjdjMDA1YmI0NTViZmExOGE=
         # Token is valid 24 hours
         token-validity-in-seconds: 86400
         token-validity-in-seconds-for-remember-me: 2592000

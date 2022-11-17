@@ -1,0 +1,29 @@
+{
+  "fields": [
+    {
+      "fieldName": "nomeComprador",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cpfComprador",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nascimentoComprador",
+      "fieldType": "LocalDate"
+    }
+  ],
+  "relationships": [],
+  "entityType": "start-form",
+  "processBpmnId": "ProcessoIngresso",
+  "processEntityName": "ProcessoIngresso",
+  "domainEntityName": "Ingresso",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "IngressoStartForm",
+  "changelogDate": "20210401000002",
+  "skipFakeData": true
+}

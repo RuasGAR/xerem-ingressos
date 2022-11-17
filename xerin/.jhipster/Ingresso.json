@@ -1,0 +1,70 @@
+{
+  "fields": [
+    {
+      "fieldName": "horarioJogo",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "timeMandante",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "timeVisitante",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "nomeEstadio",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "setorEstadio",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "assentoEstadio",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nomeComprador",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "cpfComprador",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "nascimentoComprador",
+      "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "numeroCartao",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "validadeCartao",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "codigoCartao",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "quantidadeDeIngressos",
+      "fieldType": "String"
+    }
+  ],
+  "relationships": [],
+  "entityType": "domain",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": true,
+  "pagination": "no",
+  "name": "Ingresso",
+  "changelogDate": "20210401000001",
+  "skipFakeData": true
+}

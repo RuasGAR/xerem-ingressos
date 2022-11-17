@@ -1,0 +1,26 @@
+{
+  "xeremIngressosApp": {
+    "ingressoStartForm": {
+      "home": {
+        "title": "Ingresso Start Forms",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Ingresso Start Form",
+        "createOrEditLabel": "Criar ou editar Ingresso Start Form",
+        "notFound": "Nenhum Ingresso Start Form encontrado"
+      },
+      "created": "Um novo Ingresso Start Form foi criado com o identificador {{ param }}",
+      "updated": "Um Ingresso Start Form foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Ingresso Start Form foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Ingresso Start Form {{ id }}?"
+      },
+      "detail": {
+        "title": "Ingresso Start Form"
+      },
+      "id": "ID",
+      "nomeComprador": "Nome Comprador",
+      "cpfComprador": "Cpf Comprador",
+      "nascimentoComprador": "Nascimento Comprador"
+    }
+  }
+}

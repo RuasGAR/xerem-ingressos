@@ -1,0 +1,73 @@
+{
+  "fields": [
+    {
+      "fieldName": "quantidadeDeIngressos",
+      "fieldType": "String",
+      "fieldReadOnly": "True"
+    },
+    {
+      "fieldName": "timeMandante",
+      "fieldType": "String",
+      "fieldReadOnly": "True"
+    },
+    {
+      "fieldName": "timeVisitante",
+      "fieldType": "String",
+      "fieldReadOnly": "True"
+    },
+    {
+      "fieldName": "horarioJogo",
+      "fieldType": "String",
+      "fieldReadOnly": "True"
+    },
+    {
+      "fieldName": "data",
+      "fieldType": "LocalDate",
+      "fieldReadOnly": "True"
+    },
+    {
+      "fieldName": "nomeEstadio",
+      "fieldType": "String",
+      "fieldReadOnly": "True"
+    },
+    {
+      "fieldName": "setorEstadio",
+      "fieldType": "String",
+      "fieldReadOnly": "True"
+    },
+    {
+      "fieldName": "assentoEstadio",
+      "fieldType": "String",
+      "fieldReadOnly": "True"
+    },
+    {
+      "fieldName": "nomeComprador",
+      "fieldType": "String",
+      "fieldReadOnly": "True"
+    },
+    {
+      "fieldName": "cpfComprador",
+      "fieldType": "String",
+      "fieldReadOnly": "True"
+    },
+    {
+      "fieldName": "nascimentoComprador",
+      "fieldType": "LocalDate",
+      "fieldReadOnly": "True"
+    }
+  ],
+  "relationships": [],
+  "entityType": "user-task-form",
+  "processBpmnId": "ProcessoIngresso",
+  "processEntityName": "ProcessoIngresso",
+  "taskBpmnId": "Confirmacao",
+  "domainEntityName": "Ingresso",
+  "service": "serviceClass",
+  "dto": "mapstruct",
+  "jpaMetamodelFiltering": false,
+  "readOnly": false,
+  "pagination": "no",
+  "name": "Confirmacao",
+  "changelogDate": "20210401000004",
+  "skipFakeData": true
+}

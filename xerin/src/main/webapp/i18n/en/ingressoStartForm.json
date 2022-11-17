@@ -1,0 +1,26 @@
+{
+  "xeremIngressosApp": {
+    "ingressoStartForm": {
+      "home": {
+        "title": "Ingresso Start Forms",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Ingresso Start Form",
+        "createOrEditLabel": "Create or edit a Ingresso Start Form",
+        "notFound": "No Ingresso Start Forms found"
+      },
+      "created": "A new Ingresso Start Form is created with identifier {{ param }}",
+      "updated": "A Ingresso Start Form is updated with identifier {{ param }}",
+      "deleted": "A Ingresso Start Form is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Ingresso Start Form {{ id }}?"
+      },
+      "detail": {
+        "title": "Ingresso Start Form"
+      },
+      "id": "ID",
+      "nomeComprador": "Nome Comprador",
+      "cpfComprador": "Cpf Comprador",
+      "nascimentoComprador": "Nascimento Comprador"
+    }
+  }
+}

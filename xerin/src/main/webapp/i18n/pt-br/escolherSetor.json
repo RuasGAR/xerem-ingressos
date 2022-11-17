@@ -1,0 +1,26 @@
+{
+  "xeremIngressosApp": {
+    "escolherSetor": {
+      "home": {
+        "title": "Escolher Setors",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Escolher Setor",
+        "createOrEditLabel": "Criar ou editar Escolher Setor",
+        "notFound": "Nenhum Escolher Setor encontrado"
+      },
+      "created": "Um novo Escolher Setor foi criado com o identificador {{ param }}",
+      "updated": "Um Escolher Setor foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Escolher Setor foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Escolher Setor {{ id }}?"
+      },
+      "detail": {
+        "title": "Escolher Setor"
+      },
+      "id": "ID",
+      "nomeEstadio": "Nome Estadio",
+      "setorEstadio": "Setor Estadio",
+      "assentoEstadio": "Assento Estadio"
+    }
+  }
+}
