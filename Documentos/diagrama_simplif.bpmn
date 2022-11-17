@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<bpmn:definitions xmlns:bpmn="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" xmlns:modeler="http://camunda.org/schema/modeler/1.0" id="Definitions_1mll4q6" targetNamespace="http://bpmn.io/schema/bpmn" exporter="Camunda Modeler" exporterVersion="5.5.0" modeler:executionPlatform="Camunda Platform" modeler:executionPlatformVersion="7.18.0">
+  <bpmn:process id="ProcessoIngresso" name="Processo Ingresso" isExecutable="true">
+    <bpmn:startEvent id="StartEvent_1" name="Usuario inicia processo de Compra de Ingresso">
+      <bpmn:outgoing>Flow_1lfe9mj</bpmn:outgoing>
+    </bpmn:startEvent>
+    <bpmn:endEvent id="Event_1iyti7z">
+      <bpmn:incoming>Flow_14sg00q</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_1qhk0m3" sourceRef="EscolherEvento" targetRef="Gateway_15d1hld" />
+    <bpmn:sequenceFlow id="Flow_1j2yusb" sourceRef="EscolherSetor" targetRef="Gateway_15d1hlf" />
+    <bpmn:sequenceFlow id="Flow_1rvpyzq" sourceRef="Pagamento" targetRef="Confirmacao" />
+    <bpmn:sequenceFlow id="Flow_14sg00q" sourceRef="Confirmacao" targetRef="Event_1iyti7z" />
+    <bpmn:sequenceFlow id="Flow_1lfe9mj" sourceRef="StartEvent_1" targetRef="EscolherEvento" />
+    <bpmn:userTask id="EscolherEvento" name="Escolher Evento Disponivel">
+      <bpmn:documentation># Compra de Ingressos para Eventos Esportivos
+
+** A compra de ingressos atualmente pode parecer algo desgastante, com múltiplas plataformas para se cadastrar. Ainda bem que a Xerém Ingressos surgiu para resolver esse problema.**
+
+A utilização da plataforma é bem simples, primeiro será necessário o reconhecimento do comprador dos ingressos. Após isso, será possível escolher um dos eventos esportivos. Caso tenha disponibilidade, será checado se o comprador é sócio do clube utilizando seu número de CPF informado na primeira etapa do processo. Caso positivo, seu ingresso será gerado. Caso negativo, será carregada a tela para o preenchimento do dados bancários para o pagamento dos ingressos, seguido da sua confirmação. </bpmn:documentation>
+      <bpmn:incoming>Flow_1lfe9mj</bpmn:incoming>
+      <bpmn:outgoing>Flow_1qhk0m3</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="EscolherSetor" name="Escolher Setor Disponivel">
+      <bpmn:incoming>Flow_1hcntr9</bpmn:incoming>
+      <bpmn:outgoing>Flow_1j2yusb</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Pagamento" name="Pagamento do Ingresso">
+      <bpmn:incoming>Flow_0b4n40n</bpmn:incoming>
+      <bpmn:outgoing>Flow_1rvpyzq</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:userTask id="Confirmacao" name="Confirmacao do Ingresso">
+      <bpmn:incoming>Flow_1rvpyzq</bpmn:incoming>
+      <bpmn:incoming>Flow_1sf27my</bpmn:incoming>
+      <bpmn:outgoing>Flow_14sg00q</bpmn:outgoing>
+    </bpmn:userTask>
+    <bpmn:exclusiveGateway id="Gateway_15d1hld" name="Ingresso Disponivel?">
+      <bpmn:incoming>Flow_1qhk0m3</bpmn:incoming>
+      <bpmn:outgoing>Flow_1hcntr9</bpmn:outgoing>
+      <bpmn:outgoing>Flow_01d86yk</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_1hcntr9" name="Sim" sourceRef="Gateway_15d1hld" targetRef="EscolherSetor">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pi.getIngresso().getTimeMandante().contains("F")}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:endEvent id="Event_00nsi0e">
+      <bpmn:incoming>Flow_01d86yk</bpmn:incoming>
+    </bpmn:endEvent>
+    <bpmn:sequenceFlow id="Flow_01d86yk" name="Nao" sourceRef="Gateway_15d1hld" targetRef="Event_00nsi0e">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!pi.getIngresso().getTimeMandante().contains("F")}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:exclusiveGateway id="Gateway_15d1hlf" name="Socio do clube?">
+      <bpmn:incoming>Flow_1j2yusb</bpmn:incoming>
+      <bpmn:outgoing>Flow_0b4n40n</bpmn:outgoing>
+      <bpmn:outgoing>Flow_1sf27my</bpmn:outgoing>
+    </bpmn:exclusiveGateway>
+    <bpmn:sequenceFlow id="Flow_0b4n40n" name="Nao" sourceRef="Gateway_15d1hlf" targetRef="Pagamento">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${!pi.getIngresso().getCpfComprador().contains("4")}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+    <bpmn:sequenceFlow id="Flow_1sf27my" name="Sim" sourceRef="Gateway_15d1hlf" targetRef="Confirmacao">
+      <bpmn:conditionExpression xsi:type="bpmn:tFormalExpression">${pi.getIngresso().getCpfComprador().contains("4")}</bpmn:conditionExpression>
+    </bpmn:sequenceFlow>
+  </bpmn:process>
+  <bpmndi:BPMNDiagram id="BPMNDiagram_1">
+    <bpmndi:BPMNPlane id="BPMNPlane_1" bpmnElement="ProcessoIngresso">
+      <bpmndi:BPMNShape id="_BPMNShape_StartEvent_2" bpmnElement="StartEvent_1">
+        <dc:Bounds x="132" y="99" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="117" y="142" width="67" height="53" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1oj4w4n_di" bpmnElement="EscolherEvento">
+        <dc:Bounds x="230" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1adbfo2_di" bpmnElement="EscolherSetor">
+        <dc:Bounds x="480" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_1bc3z9q_di" bpmnElement="Gateway_15d1hld" isMarkerVisible="true">
+        <dc:Bounds x="375" y="92" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="373" y="62" width="57" height="27" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_00nsi0e_di" bpmnElement="Event_00nsi0e">
+        <dc:Bounds x="382" y="202" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_18amo7b_di" bpmnElement="Pagamento">
+        <dc:Bounds x="740" y="310" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Gateway_15d1hlf_di" bpmnElement="Gateway_15d1hlf" isMarkerVisible="true">
+        <dc:Bounds x="635" y="92" width="50" height="50" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="622" y="62" width="79" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Activity_1evaly7_di" bpmnElement="Confirmacao">
+        <dc:Bounds x="940" y="77" width="100" height="80" />
+        <bpmndi:BPMNLabel />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="Event_1iyti7z_di" bpmnElement="Event_1iyti7z">
+        <dc:Bounds x="1152" y="99" width="36" height="36" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="Flow_1lfe9mj_di" bpmnElement="Flow_1lfe9mj">
+        <di:waypoint x="168" y="117" />
+        <di:waypoint x="230" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_14sg00q_di" bpmnElement="Flow_14sg00q">
+        <di:waypoint x="1040" y="117" />
+        <di:waypoint x="1152" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1qhk0m3_di" bpmnElement="Flow_1qhk0m3">
+        <di:waypoint x="330" y="117" />
+        <di:waypoint x="375" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1j2yusb_di" bpmnElement="Flow_1j2yusb">
+        <di:waypoint x="580" y="117" />
+        <di:waypoint x="635" y="117" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1rvpyzq_di" bpmnElement="Flow_1rvpyzq">
+        <di:waypoint x="840" y="350" />
+        <di:waypoint x="990" y="350" />
+        <di:waypoint x="990" y="157" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1hcntr9_di" bpmnElement="Flow_1hcntr9">
+        <di:waypoint x="425" y="117" />
+        <di:waypoint x="480" y="117" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="443" y="99" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_01d86yk_di" bpmnElement="Flow_01d86yk">
+        <di:waypoint x="400" y="142" />
+        <di:waypoint x="400" y="202" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="406" y="169" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_0b4n40n_di" bpmnElement="Flow_0b4n40n">
+        <di:waypoint x="660" y="142" />
+        <di:waypoint x="660" y="350" />
+        <di:waypoint x="740" y="350" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="665" y="243" width="21" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="Flow_1sf27my_di" bpmnElement="Flow_1sf27my">
+        <di:waypoint x="685" y="117" />
+        <di:waypoint x="940" y="117" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="803" y="99" width="19" height="14" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</bpmn:definitions>
