@@ -200,17 +200,15 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
-                  <label class="form-control-label" v-text="$t('xeremIngressosApp.processoIngresso.quantidadeDeIngressos')"
-                    >quantidadeDeIngressos</label
-                  >
+                  <label class="form-control-label" v-text="$t('xeremIngressosApp.processoIngresso.emailComprador')">emailComprador</label>
                   <input
                     readonly
                     type="text"
                     class="form-control"
-                    name="quantidadeDeIngressos"
-                    id="ingresso-quantidadeDeIngressos"
-                    data-cy="quantidadeDeIngressos"
-                    v-model="processoIngresso.ingresso.quantidadeDeIngressos"
+                    name="emailComprador"
+                    id="ingresso-emailComprador"
+                    data-cy="emailComprador"
+                    v-model="processoIngresso.ingresso.emailComprador"
                   />
                 </div>
               </div>

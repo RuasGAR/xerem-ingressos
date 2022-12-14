@@ -31,7 +31,7 @@
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.numeroCartao')">Numero Cartao</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.validadeCartao')">Validade Cartao</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.codigoCartao')">Codigo Cartao</span></th>
-            <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.quantidadeDeIngressos')">Quantidade De Ingressos</span></th>
+            <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.emailComprador')">Email Comprador</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -53,7 +53,7 @@
             <td>{{ ingresso.numeroCartao }}</td>
             <td>{{ ingresso.validadeCartao }}</td>
             <td>{{ ingresso.codigoCartao }}</td>
-            <td>{{ ingresso.quantidadeDeIngressos }}</td>
+            <td>{{ ingresso.emailComprador }}</td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'IngressoView', params: { ingressoId: ingresso.id } }" custom v-slot="{ navigate }">

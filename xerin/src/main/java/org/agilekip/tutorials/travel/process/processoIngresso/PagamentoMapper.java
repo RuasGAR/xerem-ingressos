@@ -19,6 +19,5 @@ public interface PagamentoMapper {
     @Mapping(target = "numeroCartao", source = "numeroCartao")
     @Mapping(target = "validadeCartao", source = "validadeCartao")
     @Mapping(target = "codigoCartao", source = "codigoCartao")
-    @Mapping(target = "quantidadeDeIngressos", source = "quantidadeDeIngressos")
     IngressoDTO toIngressoDTO(Ingresso ingresso);
 }

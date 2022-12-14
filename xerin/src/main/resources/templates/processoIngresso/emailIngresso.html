@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" th:lang="${#locale.language}" lang="en">
+  <head>
+    <title>Ingresso Confirmado!</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
+  <body>
+    <p>Caro, <span th:text="${ingresso.nomeComprador}">nomeComprador</span>.</p>
+    <p>Obrigado por fazer a compra do ingresso para o jogo entre <b th:text="${ingresso.timeMandante}">timeMandante</b> x <b th:text="${ingresso.timeVisitante}">timeVisitante</b>.</p>
+    <ul>
+        <li><b>Data e Horário</b>: <span th:text="${ingresso.data }"></span> às <span th:text="${ingresso.horarioJogo }"></span></li>
+        <li><b>Local</b>: <span th:text="${ingresso.nomeEstadio }"></span></li>
+        <li><b>Setor</b>: <span th:text="${ingresso.setorEstadio }"></span></li>
+        <li><b>Assento</b>: <span th:text="${ingresso.assentoEstadio }"></span></li>
+    </ul>
+    <p>
+      Divirta-se,
+      <br />
+      <em>Equipe Xerém Ingressos</em>
+    </p>
+  </body>
+</html>

@@ -7,7 +7,6 @@ const validations: any = {
   taskContext: {
     processoIngresso: {
       ingresso: {
-        quantidadeDeIngressos: {},
         timeMandante: {},
         timeVisitante: {},
         horarioJogo: {},
@@ -18,6 +17,7 @@ const validations: any = {
         nomeComprador: {},
         cpfComprador: {},
         nascimentoComprador: {},
+        emailComprador: {},
       },
     },
   },

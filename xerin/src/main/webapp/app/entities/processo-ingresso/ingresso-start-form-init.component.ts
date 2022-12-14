@@ -13,6 +13,7 @@ const validations: any = {
       nomeComprador: {},
       cpfComprador: {},
       nascimentoComprador: {},
+      emailComprador: {},
     },
   },
 };

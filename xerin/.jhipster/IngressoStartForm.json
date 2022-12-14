@@ -11,6 +11,10 @@
     {
       "fieldName": "nascimentoComprador",
       "fieldType": "LocalDate"
+    },
+    {
+      "fieldName": "emailComprador",
+      "fieldType": "String"
     }
   ],
   "relationships": [],

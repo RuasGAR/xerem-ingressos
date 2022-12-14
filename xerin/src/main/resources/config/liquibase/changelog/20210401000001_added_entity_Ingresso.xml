@@ -53,7 +53,7 @@
             <column name="codigo_cartao" type="integer">
                 <constraints nullable="true" />
             </column>
-            <column name="quantidade_de_ingressos" type="varchar(255)">
+            <column name="email_comprador" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
             <!-- jhipster-needle-liquibase-add-column - JHipster will add columns here -->

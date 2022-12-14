@@ -85,10 +85,10 @@
             <span>{{ ingresso.codigoCartao }}</span>
           </dd>
           <dt>
-            <span v-text="$t('xeremIngressosApp.ingresso.quantidadeDeIngressos')">Quantidade De Ingressos</span>
+            <span v-text="$t('xeremIngressosApp.ingresso.emailComprador')">Email Comprador</span>
           </dt>
           <dd>
-            <span>{{ ingresso.quantidadeDeIngressos }}</span>
+            <span>{{ ingresso.emailComprador }}</span>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

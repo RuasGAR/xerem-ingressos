@@ -20,8 +20,7 @@
       "id": "ID",
       "numeroCartao": "Numero Cartao",
       "validadeCartao": "Validade Cartao",
-      "codigoCartao": "Codigo Cartao",
-      "quantidadeDeIngressos": "Quantidade De Ingressos"
+      "codigoCartao": "Codigo Cartao"
     }
   }
 }

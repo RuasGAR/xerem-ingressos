@@ -1,11 +1,6 @@
 {
   "fields": [
     {
-      "fieldName": "quantidadeDeIngressos",
-      "fieldType": "String",
-      "fieldReadOnly": "True"
-    },
-    {
       "fieldName": "timeMandante",
       "fieldType": "String",
       "fieldReadOnly": "True"
@@ -53,6 +48,11 @@
     {
       "fieldName": "nascimentoComprador",
       "fieldType": "LocalDate",
+      "fieldReadOnly": "True"
+    },
+    {
+      "fieldName": "emailComprador",
+      "fieldType": "String",
       "fieldReadOnly": "True"
     }
   ],

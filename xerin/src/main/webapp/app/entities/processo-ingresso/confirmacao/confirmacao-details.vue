@@ -9,20 +9,6 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('xeremIngressosApp.confirmacao.quantidadeDeIngressos')"
-                >quantidadeDeIngressos</label
-              >
-              <input
-                readonly
-                type="text"
-                class="form-control"
-                name="quantidadeDeIngressos"
-                id="ingresso-quantidadeDeIngressos"
-                data-cy="quantidadeDeIngressos"
-                v-model="taskContext.processoIngresso.ingresso.quantidadeDeIngressos"
-              />
-            </div>
-            <div class="form-group">
               <label class="form-control-label" v-text="$t('xeremIngressosApp.confirmacao.timeMandante')">timeMandante</label>
               <input
                 readonly
@@ -140,6 +126,18 @@
                 id="ingresso-nascimentoComprador"
                 data-cy="nascimentoComprador"
                 v-model="taskContext.processoIngresso.ingresso.nascimentoComprador"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('xeremIngressosApp.confirmacao.emailComprador')">emailComprador</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                name="emailComprador"
+                id="ingresso-emailComprador"
+                data-cy="emailComprador"
+                v-model="taskContext.processoIngresso.ingresso.emailComprador"
               />
             </div>
           </template>

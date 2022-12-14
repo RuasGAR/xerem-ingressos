@@ -72,8 +72,8 @@ class IngressoResourceIT {
     private static final Integer DEFAULT_CODIGO_CARTAO = 1;
     private static final Integer UPDATED_CODIGO_CARTAO = 2;
 
-    private static final String DEFAULT_QUANTIDADE_DE_INGRESSOS = "AAAAAAAAAA";
-    private static final String UPDATED_QUANTIDADE_DE_INGRESSOS = "BBBBBBBBBB";
+    private static final String DEFAULT_EMAIL_COMPRADOR = "AAAAAAAAAA";
+    private static final String UPDATED_EMAIL_COMPRADOR = "BBBBBBBBBB";
 
     private static final String ENTITY_API_URL = "/api/ingressos";
     private static final String ENTITY_API_URL_ID = ENTITY_API_URL + "/{id}";
@@ -116,7 +116,7 @@ class IngressoResourceIT {
             .numeroCartao(DEFAULT_NUMERO_CARTAO)
             .validadeCartao(DEFAULT_VALIDADE_CARTAO)
             .codigoCartao(DEFAULT_CODIGO_CARTAO)
-            .quantidadeDeIngressos(DEFAULT_QUANTIDADE_DE_INGRESSOS);
+            .emailComprador(DEFAULT_EMAIL_COMPRADOR);
         return ingresso;
     }
 
@@ -141,7 +141,7 @@ class IngressoResourceIT {
             .numeroCartao(UPDATED_NUMERO_CARTAO)
             .validadeCartao(UPDATED_VALIDADE_CARTAO)
             .codigoCartao(UPDATED_CODIGO_CARTAO)
-            .quantidadeDeIngressos(UPDATED_QUANTIDADE_DE_INGRESSOS);
+            .emailComprador(UPDATED_EMAIL_COMPRADOR);
         return ingresso;
     }
 
@@ -175,7 +175,7 @@ class IngressoResourceIT {
             .andExpect(jsonPath("$.[*].numeroCartao").value(hasItem(DEFAULT_NUMERO_CARTAO)))
             .andExpect(jsonPath("$.[*].validadeCartao").value(hasItem(DEFAULT_VALIDADE_CARTAO)))
             .andExpect(jsonPath("$.[*].codigoCartao").value(hasItem(DEFAULT_CODIGO_CARTAO)))
-            .andExpect(jsonPath("$.[*].quantidadeDeIngressos").value(hasItem(DEFAULT_QUANTIDADE_DE_INGRESSOS)));
+            .andExpect(jsonPath("$.[*].emailComprador").value(hasItem(DEFAULT_EMAIL_COMPRADOR)));
     }
 
     @Test
@@ -203,7 +203,7 @@ class IngressoResourceIT {
             .andExpect(jsonPath("$.numeroCartao").value(DEFAULT_NUMERO_CARTAO))
             .andExpect(jsonPath("$.validadeCartao").value(DEFAULT_VALIDADE_CARTAO))
             .andExpect(jsonPath("$.codigoCartao").value(DEFAULT_CODIGO_CARTAO))
-            .andExpect(jsonPath("$.quantidadeDeIngressos").value(DEFAULT_QUANTIDADE_DE_INGRESSOS));
+            .andExpect(jsonPath("$.emailComprador").value(DEFAULT_EMAIL_COMPRADOR));
     }
 
     @Test

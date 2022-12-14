@@ -9,27 +9,6 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label
-                class="form-control-label"
-                v-text="$t('xeremIngressosApp.confirmacao.quantidadeDeIngressos')"
-                for="confirmacao-quantidadeDeIngressos"
-                >Quantidade De Ingressos</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                name="quantidadeDeIngressos"
-                id="confirmacao-quantidadeDeIngressos"
-                readonly
-                data-cy="quantidadeDeIngressos"
-                :class="{
-                  valid: !$v.taskContext.processoIngresso.ingresso.quantidadeDeIngressos.$invalid,
-                  invalid: $v.taskContext.processoIngresso.ingresso.quantidadeDeIngressos.$invalid,
-                }"
-                v-model="$v.taskContext.processoIngresso.ingresso.quantidadeDeIngressos.$model"
-              />
-            </div>
-            <div class="form-group">
               <label class="form-control-label" v-text="$t('xeremIngressosApp.confirmacao.timeMandante')" for="confirmacao-timeMandante"
                 >Time Mandante</label
               >
@@ -213,6 +192,24 @@
                   v-model="$v.taskContext.processoIngresso.ingresso.nascimentoComprador.$model"
                 />
               </b-input-group>
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('xeremIngressosApp.confirmacao.emailComprador')" for="confirmacao-emailComprador"
+                >Email Comprador</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="emailComprador"
+                id="confirmacao-emailComprador"
+                readonly
+                data-cy="emailComprador"
+                :class="{
+                  valid: !$v.taskContext.processoIngresso.ingresso.emailComprador.$invalid,
+                  invalid: $v.taskContext.processoIngresso.ingresso.emailComprador.$invalid,
+                }"
+                v-model="$v.taskContext.processoIngresso.ingresso.emailComprador.$model"
+              />
             </div>
           </template>
         </akip-show-task-instance>

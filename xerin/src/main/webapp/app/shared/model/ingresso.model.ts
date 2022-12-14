@@ -13,7 +13,7 @@ export interface IIngresso {
   numeroCartao?: number | null;
   validadeCartao?: string | null;
   codigoCartao?: number | null;
-  quantidadeDeIngressos?: string | null;
+  emailComprador?: string | null;
 }
 
 export class Ingresso implements IIngresso {
@@ -32,6 +32,6 @@ export class Ingresso implements IIngresso {
     public numeroCartao?: number | null,
     public validadeCartao?: string | null,
     public codigoCartao?: number | null,
-    public quantidadeDeIngressos?: string | null
+    public emailComprador?: string | null
   ) {}
 }

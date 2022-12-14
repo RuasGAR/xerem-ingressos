@@ -71,7 +71,6 @@ public class ConfirmacaoService {
 
     public void save(ConfirmacaoContextDTO confirmacaoContext) {
         IngressoDTO ingressoDTO = ingressoService.findOne(confirmacaoContext.getProcessoIngresso().getIngresso().getId()).orElseThrow();
-        ingressoDTO.setQuantidadeDeIngressos(confirmacaoContext.getProcessoIngresso().getIngresso().getQuantidadeDeIngressos());
         ingressoDTO.setTimeMandante(confirmacaoContext.getProcessoIngresso().getIngresso().getTimeMandante());
         ingressoDTO.setTimeVisitante(confirmacaoContext.getProcessoIngresso().getIngresso().getTimeVisitante());
         ingressoDTO.setHorarioJogo(confirmacaoContext.getProcessoIngresso().getIngresso().getHorarioJogo());
@@ -82,6 +81,7 @@ public class ConfirmacaoService {
         ingressoDTO.setNomeComprador(confirmacaoContext.getProcessoIngresso().getIngresso().getNomeComprador());
         ingressoDTO.setCpfComprador(confirmacaoContext.getProcessoIngresso().getIngresso().getCpfComprador());
         ingressoDTO.setNascimentoComprador(confirmacaoContext.getProcessoIngresso().getIngresso().getNascimentoComprador());
+        ingressoDTO.setEmailComprador(confirmacaoContext.getProcessoIngresso().getIngresso().getEmailComprador());
         ingressoService.save(ingressoDTO);
     }
 

@@ -60,8 +60,8 @@ public class Ingresso implements Serializable {
     @Column(name = "codigo_cartao")
     private Integer codigoCartao;
 
-    @Column(name = "quantidade_de_ingressos")
-    private String quantidadeDeIngressos;
+    @Column(name = "email_comprador")
+    private String emailComprador;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -246,17 +246,17 @@ public class Ingresso implements Serializable {
         this.codigoCartao = codigoCartao;
     }
 
-    public String getQuantidadeDeIngressos() {
-        return this.quantidadeDeIngressos;
+    public String getEmailComprador() {
+        return this.emailComprador;
     }
 
-    public Ingresso quantidadeDeIngressos(String quantidadeDeIngressos) {
-        this.quantidadeDeIngressos = quantidadeDeIngressos;
+    public Ingresso emailComprador(String emailComprador) {
+        this.emailComprador = emailComprador;
         return this;
     }
 
-    public void setQuantidadeDeIngressos(String quantidadeDeIngressos) {
-        this.quantidadeDeIngressos = quantidadeDeIngressos;
+    public void setEmailComprador(String emailComprador) {
+        this.emailComprador = emailComprador;
     }
 
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
@@ -296,7 +296,7 @@ public class Ingresso implements Serializable {
             ", numeroCartao=" + getNumeroCartao() +
             ", validadeCartao='" + getValidadeCartao() + "'" +
             ", codigoCartao=" + getCodigoCartao() +
-            ", quantidadeDeIngressos='" + getQuantidadeDeIngressos() + "'" +
+            ", emailComprador='" + getEmailComprador() + "'" +
             "}";
     }
 }

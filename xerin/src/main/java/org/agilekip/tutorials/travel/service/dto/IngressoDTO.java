@@ -37,7 +37,7 @@ public class IngressoDTO implements Serializable {
 
     private Integer codigoCartao;
 
-    private String quantidadeDeIngressos;
+    private String emailComprador;
 
     public Long getId() {
         return id;
@@ -151,12 +151,12 @@ public class IngressoDTO implements Serializable {
         this.codigoCartao = codigoCartao;
     }
 
-    public String getQuantidadeDeIngressos() {
-        return quantidadeDeIngressos;
+    public String getEmailComprador() {
+        return emailComprador;
     }
 
-    public void setQuantidadeDeIngressos(String quantidadeDeIngressos) {
-        this.quantidadeDeIngressos = quantidadeDeIngressos;
+    public void setEmailComprador(String emailComprador) {
+        this.emailComprador = emailComprador;
     }
 
     @Override
@@ -198,7 +198,7 @@ public class IngressoDTO implements Serializable {
             ", numeroCartao=" + getNumeroCartao() +
             ", validadeCartao='" + getValidadeCartao() + "'" +
             ", codigoCartao=" + getCodigoCartao() +
-            ", quantidadeDeIngressos='" + getQuantidadeDeIngressos() + "'" +
+            ", emailComprador='" + getEmailComprador() + "'" +
             "}";
     }
 }

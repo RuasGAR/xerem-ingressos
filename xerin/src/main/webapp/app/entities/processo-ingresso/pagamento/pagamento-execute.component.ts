@@ -10,7 +10,6 @@ const validations: any = {
         numeroCartao: {},
         validadeCartao: {},
         codigoCartao: {},
-        quantidadeDeIngressos: {},
       },
     },
   },

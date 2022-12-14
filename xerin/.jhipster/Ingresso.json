@@ -53,7 +53,7 @@
       "fieldType": "Integer"
     },
     {
-      "fieldName": "quantidadeDeIngressos",
+      "fieldName": "emailComprador",
       "fieldType": "String"
     }
   ],

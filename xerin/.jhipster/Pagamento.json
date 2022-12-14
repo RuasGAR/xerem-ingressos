@@ -11,10 +11,6 @@
     {
       "fieldName": "codigoCartao",
       "fieldType": "Integer"
-    },
-    {
-      "fieldName": "quantidadeDeIngressos",
-      "fieldType": "Integer"
     }
   ],
   "relationships": [],

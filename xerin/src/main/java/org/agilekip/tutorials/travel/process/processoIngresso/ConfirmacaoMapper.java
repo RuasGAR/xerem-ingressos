@@ -16,7 +16,6 @@ public interface ConfirmacaoMapper {
 
     @BeanMapping(ignoreByDefault = true)
     @Mapping(target = "id", source = "id")
-    @Mapping(target = "quantidadeDeIngressos", source = "quantidadeDeIngressos")
     @Mapping(target = "timeMandante", source = "timeMandante")
     @Mapping(target = "timeVisitante", source = "timeVisitante")
     @Mapping(target = "horarioJogo", source = "horarioJogo")
@@ -27,5 +26,6 @@ public interface ConfirmacaoMapper {
     @Mapping(target = "nomeComprador", source = "nomeComprador")
     @Mapping(target = "cpfComprador", source = "cpfComprador")
     @Mapping(target = "nascimentoComprador", source = "nascimentoComprador")
+    @Mapping(target = "emailComprador", source = "emailComprador")
     IngressoDTO toIngressoDTO(Ingresso ingresso);
 }

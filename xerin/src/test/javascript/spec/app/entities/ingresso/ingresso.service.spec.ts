@@ -94,7 +94,7 @@ describe('Service Tests', () => {
             numeroCartao: 1,
             validadeCartao: 'BBBBBB',
             codigoCartao: 1,
-            quantidadeDeIngressos: 'BBBBBB',
+            emailComprador: 'BBBBBB',
           },
           elemDefault
         );

@@ -20,7 +20,8 @@
       "id": "ID",
       "nomeComprador": "Nome Comprador",
       "cpfComprador": "Cpf Comprador",
-      "nascimentoComprador": "Nascimento Comprador"
+      "nascimentoComprador": "Nascimento Comprador",
+      "emailComprador": "Email Comprador"
     }
   }
 }

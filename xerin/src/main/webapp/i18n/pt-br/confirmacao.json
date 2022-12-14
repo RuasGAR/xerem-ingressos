@@ -18,7 +18,6 @@
         "title": "Confirmacao"
       },
       "id": "ID",
-      "quantidadeDeIngressos": "Quantidade De Ingressos",
       "timeMandante": "Time Mandante",
       "timeVisitante": "Time Visitante",
       "horarioJogo": "Horario Jogo",
@@ -28,7 +27,8 @@
       "assentoEstadio": "Assento Estadio",
       "nomeComprador": "Nome Comprador",
       "cpfComprador": "Cpf Comprador",
-      "nascimentoComprador": "Nascimento Comprador"
+      "nascimentoComprador": "Nascimento Comprador",
+      "emailComprador": "Email Comprador"
     }
   }
 }

@@ -53,8 +53,8 @@
       "fieldType": "Integer"
     },
     {
-      "fieldName": "quantidadeDeIngressos",
-      "fieldType": "Integer"
+      "fieldName": "emailComprador",
+      "fieldType": "String"
     }
   ],
   "relationships": [],

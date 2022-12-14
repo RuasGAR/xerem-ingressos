@@ -90,6 +90,26 @@
                     />
                   </b-input-group>
                 </div>
+                <div class="form-group">
+                  <label
+                    class="form-control-label"
+                    v-text="$t('xeremIngressosApp.ingressoStartForm.emailComprador')"
+                    for="ingresso-start-form-emailComprador"
+                    >Email Comprador</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    name="emailComprador"
+                    id="ingresso-start-form-emailComprador"
+                    data-cy="emailComprador"
+                    :class="{
+                      valid: !$v.processoIngresso.ingresso.emailComprador.$invalid,
+                      invalid: $v.processoIngresso.ingresso.emailComprador.$invalid,
+                    }"
+                    v-model="$v.processoIngresso.ingresso.emailComprador.$model"
+                  />
+                </div>
               </div>
             </template>
           </akip-show-process-definition>

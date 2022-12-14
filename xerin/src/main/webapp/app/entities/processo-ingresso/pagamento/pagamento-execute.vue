@@ -59,26 +59,6 @@
                 v-model.number="$v.taskContext.processoIngresso.ingresso.codigoCartao.$model"
               />
             </div>
-            <div class="form-group">
-              <label
-                class="form-control-label"
-                v-text="$t('xeremIngressosApp.pagamento.quantidadeDeIngressos')"
-                for="pagamento-quantidadeDeIngressos"
-                >Quantidade De Ingressos</label
-              >
-              <input
-                type="number"
-                class="form-control"
-                name="quantidadeDeIngressos"
-                id="pagamento-quantidadeDeIngressos"
-                data-cy="quantidadeDeIngressos"
-                :class="{
-                  valid: !$v.taskContext.processoIngresso.ingresso.quantidadeDeIngressos.$invalid,
-                  invalid: $v.taskContext.processoIngresso.ingresso.quantidadeDeIngressos.$invalid,
-                }"
-                v-model.number="$v.taskContext.processoIngresso.ingresso.quantidadeDeIngressos.$model"
-              />
-            </div>
           </template>
         </akip-show-task-instance>
         <br />

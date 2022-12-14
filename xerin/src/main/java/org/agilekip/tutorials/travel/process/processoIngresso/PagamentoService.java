@@ -74,7 +74,6 @@ public class PagamentoService {
         ingressoDTO.setNumeroCartao(pagamentoContext.getProcessoIngresso().getIngresso().getNumeroCartao());
         ingressoDTO.setValidadeCartao(pagamentoContext.getProcessoIngresso().getIngresso().getValidadeCartao());
         ingressoDTO.setCodigoCartao(pagamentoContext.getProcessoIngresso().getIngresso().getCodigoCartao());
-        ingressoDTO.setQuantidadeDeIngressos(pagamentoContext.getProcessoIngresso().getIngresso().getQuantidadeDeIngressos());
         ingressoService.save(ingressoDTO);
     }
 
