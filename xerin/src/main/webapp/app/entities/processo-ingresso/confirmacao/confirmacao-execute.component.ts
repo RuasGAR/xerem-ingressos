@@ -11,7 +11,7 @@ const validations: any = {
         timeVisitante: {},
         horarioJogo: {},
         data: {},
-        nomeEstadio: {},
+        estadio: {},
         setorEstadio: {},
         assentoEstadio: {},
         nomeComprador: {},

@@ -21,7 +21,7 @@
       "fieldReadOnly": "True"
     },
     {
-      "fieldName": "nomeEstadio",
+      "fieldName": "estadio",
       "fieldType": "String",
       "fieldReadOnly": "True"
     },

@@ -21,15 +21,15 @@
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('xeremIngressosApp.escolherEvento.timeMandante')">timeMandante</label>
+              <label class="form-control-label" v-text="$t('xeremIngressosApp.escolherEvento.data')">data</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="timeMandante"
-                id="ingresso-timeMandante"
-                data-cy="timeMandante"
-                v-model="taskContext.processoIngresso.ingresso.timeMandante"
+                name="data"
+                id="ingresso-data"
+                data-cy="data"
+                v-model="taskContext.processoIngresso.ingresso.data"
               />
             </div>
             <div class="form-group">
@@ -45,15 +45,31 @@
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('xeremIngressosApp.escolherEvento.data')">data</label>
+              <label
+                class="form-control-label"
+                v-text="$t('xeremIngressosApp.escolherEvento.timeMandante')"
+                for="escolher-evento-timeMandante"
+                >Time Mandante</label
+              >
               <input
+                v-if="taskContext.processoIngresso.ingresso.timeMandante"
                 readonly
                 type="text"
                 class="form-control"
-                name="data"
-                id="ingresso-data"
-                data-cy="data"
-                v-model="taskContext.processoIngresso.ingresso.data"
+                name="timeMandante"
+                id="ingresso-timeMandante"
+                data-cy="timeMandante"
+                :value="taskContext.processoIngresso.ingresso.timeMandante.nome"
+              />
+              <input
+                v-else
+                readonly
+                type="text"
+                class="form-control"
+                name="timeMandante"
+                id="ingresso-timeMandante"
+                data-cy="timeMandante"
+                value=""
               />
             </div>
           </template>

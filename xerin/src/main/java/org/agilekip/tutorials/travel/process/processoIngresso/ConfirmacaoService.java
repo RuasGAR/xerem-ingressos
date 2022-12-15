@@ -75,7 +75,7 @@ public class ConfirmacaoService {
         ingressoDTO.setTimeVisitante(confirmacaoContext.getProcessoIngresso().getIngresso().getTimeVisitante());
         ingressoDTO.setHorarioJogo(confirmacaoContext.getProcessoIngresso().getIngresso().getHorarioJogo());
         ingressoDTO.setData(confirmacaoContext.getProcessoIngresso().getIngresso().getData());
-        ingressoDTO.setNomeEstadio(confirmacaoContext.getProcessoIngresso().getIngresso().getNomeEstadio());
+        ingressoDTO.setEstadio(confirmacaoContext.getProcessoIngresso().getIngresso().getEstadio());
         ingressoDTO.setSetorEstadio(confirmacaoContext.getProcessoIngresso().getIngresso().getSetorEstadio());
         ingressoDTO.setAssentoEstadio(confirmacaoContext.getProcessoIngresso().getIngresso().getAssentoEstadio());
         ingressoDTO.setNomeComprador(confirmacaoContext.getProcessoIngresso().getIngresso().getNomeComprador());

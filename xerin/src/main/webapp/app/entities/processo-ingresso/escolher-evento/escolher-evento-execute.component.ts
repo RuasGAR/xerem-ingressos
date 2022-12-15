@@ -1,5 +1,8 @@
 import { Component, Vue, Inject } from 'vue-property-decorator';
 
+import TimeService from '@/entities/time/time.service';
+import { ITime } from '@/shared/model/time.model';
+
 import EscolherEventoService from './escolher-evento.service';
 import { EscolherEventoContext } from './escolher-evento.model';
 
@@ -8,9 +11,8 @@ const validations: any = {
     processoIngresso: {
       ingresso: {
         horarioJogo: {},
-        timeMandante: {},
-        timeVisitante: {},
         data: {},
+        timeVisitante: {},
       },
     },
   },
@@ -22,6 +24,10 @@ const validations: any = {
 export default class EscolherEventoExecuteComponent extends Vue {
   private escolherEventoService: EscolherEventoService = new EscolherEventoService();
   private taskContext: EscolherEventoContext = {};
+
+  @Inject('TimeService') private TimeService: () => TimeService;
+
+  public Times: ITime[] = [];
   public isSaving = false;
 
   beforeRouteEnter(to, from, next) {
@@ -29,6 +35,7 @@ export default class EscolherEventoExecuteComponent extends Vue {
       if (to.params.taskInstanceId) {
         vm.claimTaskInstance(to.params.taskInstanceId);
       }
+      vm.initRelationships();
     });
   }
 
@@ -48,5 +55,11 @@ export default class EscolherEventoExecuteComponent extends Vue {
     });
   }
 
-  public initRelationships(): void {}
+  public initRelationships(): void {
+    this.TimeService()
+      .retrieve()
+      .then(res => {
+        this.Times = res.data;
+      });
+  }
 }

@@ -19,9 +19,9 @@
       },
       "id": "ID",
       "horarioJogo": "Horario Jogo",
-      "timeMandante": "Time Mandante",
+      "data": "Data",
       "timeVisitante": "Time Visitante",
-      "data": "Data"
+      "timeMandante": "Time Mandante"
     }
   }
 }

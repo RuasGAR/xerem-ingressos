@@ -53,6 +53,6 @@
     "clientPackageManager": "npm",
     "clientThemeVariant": "",
     "languages": ["en", "pt-br"],
-    "entities": ["Ingresso", "Time"]
+    "entities": ["Ingresso", "Time", "Estadio"]
   }
 }

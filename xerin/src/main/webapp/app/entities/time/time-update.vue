@@ -27,18 +27,6 @@
             />
           </div>
           <div class="form-group">
-            <label class="form-control-label" v-text="$t('xeremIngressosApp.time.nomeCasa')" for="time-nomeCasa">Nome Casa</label>
-            <input
-              type="text"
-              class="form-control"
-              name="nomeCasa"
-              id="time-nomeCasa"
-              data-cy="nomeCasa"
-              :class="{ valid: !$v.time.nomeCasa.$invalid, invalid: $v.time.nomeCasa.$invalid }"
-              v-model="$v.time.nomeCasa.$model"
-            />
-          </div>
-          <div class="form-group">
             <label class="form-control-label" v-text="$t('xeremIngressosApp.time.cidade')" for="time-cidade">Cidade</label>
             <input
               type="text"

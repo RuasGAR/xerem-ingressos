@@ -29,7 +29,7 @@ describe('Service Tests', () => {
 
     beforeEach(() => {
       service = new TimeService();
-      elemDefault = new Time(0, 'AAAAAAA', 'AAAAAAA', 'AAAAAAA');
+      elemDefault = new Time(0, 'AAAAAAA', 'AAAAAAA');
     });
 
     describe('Service methods', () => {
@@ -82,7 +82,6 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             nome: 'BBBBBB',
-            nomeCasa: 'BBBBBB',
             cidade: 'BBBBBB',
           },
           elemDefault
@@ -111,7 +110,6 @@ describe('Service Tests', () => {
         const patchObject = Object.assign(
           {
             nome: 'BBBBBB',
-            cidade: 'BBBBBB',
           },
           new Time()
         );
@@ -140,7 +138,6 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             nome: 'BBBBBB',
-            nomeCasa: 'BBBBBB',
             cidade: 'BBBBBB',
           },
           elemDefault

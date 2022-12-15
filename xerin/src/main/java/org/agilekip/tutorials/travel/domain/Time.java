@@ -23,9 +23,6 @@ public class Time implements Serializable {
     @Column(name = "nome")
     private String nome;
 
-    @Column(name = "nome_casa")
-    private String nomeCasa;
-
     @Column(name = "cidade")
     private String cidade;
 
@@ -54,19 +51,6 @@ public class Time implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getNomeCasa() {
-        return this.nomeCasa;
-    }
-
-    public Time nomeCasa(String nomeCasa) {
-        this.nomeCasa = nomeCasa;
-        return this;
-    }
-
-    public void setNomeCasa(String nomeCasa) {
-        this.nomeCasa = nomeCasa;
     }
 
     public String getCidade() {
@@ -107,7 +91,6 @@ public class Time implements Serializable {
         return "Time{" +
             "id=" + getId() +
             ", nome='" + getNome() + "'" +
-            ", nomeCasa='" + getNomeCasa() + "'" +
             ", cidade='" + getCidade() + "'" +
             "}";
     }

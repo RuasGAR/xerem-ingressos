@@ -34,9 +34,6 @@ class TimeResourceIT {
     private static final String DEFAULT_NOME = "AAAAAAAAAA";
     private static final String UPDATED_NOME = "BBBBBBBBBB";
 
-    private static final String DEFAULT_NOME_CASA = "AAAAAAAAAA";
-    private static final String UPDATED_NOME_CASA = "BBBBBBBBBB";
-
     private static final String DEFAULT_CIDADE = "AAAAAAAAAA";
     private static final String UPDATED_CIDADE = "BBBBBBBBBB";
 
@@ -67,7 +64,7 @@ class TimeResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Time createEntity(EntityManager em) {
-        Time time = new Time().nome(DEFAULT_NOME).nomeCasa(DEFAULT_NOME_CASA).cidade(DEFAULT_CIDADE);
+        Time time = new Time().nome(DEFAULT_NOME).cidade(DEFAULT_CIDADE);
         return time;
     }
 
@@ -78,7 +75,7 @@ class TimeResourceIT {
      * if they test an entity which requires the current entity.
      */
     public static Time createUpdatedEntity(EntityManager em) {
-        Time time = new Time().nome(UPDATED_NOME).nomeCasa(UPDATED_NOME_CASA).cidade(UPDATED_CIDADE);
+        Time time = new Time().nome(UPDATED_NOME).cidade(UPDATED_CIDADE);
         return time;
     }
 
@@ -102,7 +99,6 @@ class TimeResourceIT {
         assertThat(timeList).hasSize(databaseSizeBeforeCreate + 1);
         Time testTime = timeList.get(timeList.size() - 1);
         assertThat(testTime.getNome()).isEqualTo(DEFAULT_NOME);
-        assertThat(testTime.getNomeCasa()).isEqualTo(DEFAULT_NOME_CASA);
         assertThat(testTime.getCidade()).isEqualTo(DEFAULT_CIDADE);
     }
 
@@ -138,7 +134,6 @@ class TimeResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(time.getId().intValue())))
             .andExpect(jsonPath("$.[*].nome").value(hasItem(DEFAULT_NOME)))
-            .andExpect(jsonPath("$.[*].nomeCasa").value(hasItem(DEFAULT_NOME_CASA)))
             .andExpect(jsonPath("$.[*].cidade").value(hasItem(DEFAULT_CIDADE)));
     }
 
@@ -155,7 +150,6 @@ class TimeResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(time.getId().intValue()))
             .andExpect(jsonPath("$.nome").value(DEFAULT_NOME))
-            .andExpect(jsonPath("$.nomeCasa").value(DEFAULT_NOME_CASA))
             .andExpect(jsonPath("$.cidade").value(DEFAULT_CIDADE));
     }
 
@@ -178,7 +172,7 @@ class TimeResourceIT {
         Time updatedTime = timeRepository.findById(time.getId()).get();
         // Disconnect from session so that the updates on updatedTime are not directly saved in db
         em.detach(updatedTime);
-        updatedTime.nome(UPDATED_NOME).nomeCasa(UPDATED_NOME_CASA).cidade(UPDATED_CIDADE);
+        updatedTime.nome(UPDATED_NOME).cidade(UPDATED_CIDADE);
         TimeDTO timeDTO = timeMapper.toDto(updatedTime);
 
         restTimeMockMvc
@@ -194,7 +188,6 @@ class TimeResourceIT {
         assertThat(timeList).hasSize(databaseSizeBeforeUpdate);
         Time testTime = timeList.get(timeList.size() - 1);
         assertThat(testTime.getNome()).isEqualTo(UPDATED_NOME);
-        assertThat(testTime.getNomeCasa()).isEqualTo(UPDATED_NOME_CASA);
         assertThat(testTime.getCidade()).isEqualTo(UPDATED_CIDADE);
     }
 
@@ -275,6 +268,36 @@ class TimeResourceIT {
         Time partialUpdatedTime = new Time();
         partialUpdatedTime.setId(time.getId());
 
+        partialUpdatedTime.nome(UPDATED_NOME);
+
+        restTimeMockMvc
+            .perform(
+                patch(ENTITY_API_URL_ID, partialUpdatedTime.getId())
+                    .contentType("application/merge-patch+json")
+                    .content(TestUtil.convertObjectToJsonBytes(partialUpdatedTime))
+            )
+            .andExpect(status().isOk());
+
+        // Validate the Time in the database
+        List<Time> timeList = timeRepository.findAll();
+        assertThat(timeList).hasSize(databaseSizeBeforeUpdate);
+        Time testTime = timeList.get(timeList.size() - 1);
+        assertThat(testTime.getNome()).isEqualTo(UPDATED_NOME);
+        assertThat(testTime.getCidade()).isEqualTo(DEFAULT_CIDADE);
+    }
+
+    @Test
+    @Transactional
+    void fullUpdateTimeWithPatch() throws Exception {
+        // Initialize the database
+        timeRepository.saveAndFlush(time);
+
+        int databaseSizeBeforeUpdate = timeRepository.findAll().size();
+
+        // Update the time using partial update
+        Time partialUpdatedTime = new Time();
+        partialUpdatedTime.setId(time.getId());
+
         partialUpdatedTime.nome(UPDATED_NOME).cidade(UPDATED_CIDADE);
 
         restTimeMockMvc
@@ -290,38 +313,6 @@ class TimeResourceIT {
         assertThat(timeList).hasSize(databaseSizeBeforeUpdate);
         Time testTime = timeList.get(timeList.size() - 1);
         assertThat(testTime.getNome()).isEqualTo(UPDATED_NOME);
-        assertThat(testTime.getNomeCasa()).isEqualTo(DEFAULT_NOME_CASA);
-        assertThat(testTime.getCidade()).isEqualTo(UPDATED_CIDADE);
-    }
-
-    @Test
-    @Transactional
-    void fullUpdateTimeWithPatch() throws Exception {
-        // Initialize the database
-        timeRepository.saveAndFlush(time);
-
-        int databaseSizeBeforeUpdate = timeRepository.findAll().size();
-
-        // Update the time using partial update
-        Time partialUpdatedTime = new Time();
-        partialUpdatedTime.setId(time.getId());
-
-        partialUpdatedTime.nome(UPDATED_NOME).nomeCasa(UPDATED_NOME_CASA).cidade(UPDATED_CIDADE);
-
-        restTimeMockMvc
-            .perform(
-                patch(ENTITY_API_URL_ID, partialUpdatedTime.getId())
-                    .contentType("application/merge-patch+json")
-                    .content(TestUtil.convertObjectToJsonBytes(partialUpdatedTime))
-            )
-            .andExpect(status().isOk());
-
-        // Validate the Time in the database
-        List<Time> timeList = timeRepository.findAll();
-        assertThat(timeList).hasSize(databaseSizeBeforeUpdate);
-        Time testTime = timeList.get(timeList.size() - 1);
-        assertThat(testTime.getNome()).isEqualTo(UPDATED_NOME);
-        assertThat(testTime.getNomeCasa()).isEqualTo(UPDATED_NOME_CASA);
         assertThat(testTime.getCidade()).isEqualTo(UPDATED_CIDADE);
     }
 

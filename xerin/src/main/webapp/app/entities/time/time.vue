@@ -25,7 +25,6 @@
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.time.nome')">Nome</span></th>
-            <th scope="row"><span v-text="$t('xeremIngressosApp.time.nomeCasa')">Nome Casa</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.time.cidade')">Cidade</span></th>
             <th scope="row"></th>
           </tr>
@@ -36,7 +35,6 @@
               <router-link :to="{ name: 'TimeView', params: { timeId: time.id } }">{{ time.id }}</router-link>
             </td>
             <td>{{ time.nome }}</td>
-            <td>{{ time.nomeCasa }}</td>
             <td>{{ time.cidade }}</td>
             <td class="text-right">
               <div class="btn-group">

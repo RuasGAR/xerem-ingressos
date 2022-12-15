@@ -24,23 +24,17 @@ public class Ingresso implements Serializable {
     @Column(name = "horario_jogo")
     private String horarioJogo;
 
-    @Column(name = "time_mandante")
-    private String timeMandante;
-
-    @Column(name = "time_visitante")
-    private String timeVisitante;
-
     @Column(name = "data")
     private LocalDate data;
-
-    @Column(name = "nome_estadio")
-    private String nomeEstadio;
 
     @Column(name = "setor_estadio")
     private String setorEstadio;
 
     @Column(name = "assento_estadio")
     private String assentoEstadio;
+
+    @Column(name = "time_visitante")
+    private String timeVisitante;
 
     @Column(name = "nome_comprador")
     private String nomeComprador;
@@ -62,6 +56,12 @@ public class Ingresso implements Serializable {
 
     @Column(name = "email_comprador")
     private String emailComprador;
+
+    @ManyToOne
+    private Time timeMandante;
+
+    @ManyToOne
+    private Estadio estadio;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -90,32 +90,6 @@ public class Ingresso implements Serializable {
         this.horarioJogo = horarioJogo;
     }
 
-    public String getTimeMandante() {
-        return this.timeMandante;
-    }
-
-    public Ingresso timeMandante(String timeMandante) {
-        this.timeMandante = timeMandante;
-        return this;
-    }
-
-    public void setTimeMandante(String timeMandante) {
-        this.timeMandante = timeMandante;
-    }
-
-    public String getTimeVisitante() {
-        return this.timeVisitante;
-    }
-
-    public Ingresso timeVisitante(String timeVisitante) {
-        this.timeVisitante = timeVisitante;
-        return this;
-    }
-
-    public void setTimeVisitante(String timeVisitante) {
-        this.timeVisitante = timeVisitante;
-    }
-
     public LocalDate getData() {
         return this.data;
     }
@@ -127,19 +101,6 @@ public class Ingresso implements Serializable {
 
     public void setData(LocalDate data) {
         this.data = data;
-    }
-
-    public String getNomeEstadio() {
-        return this.nomeEstadio;
-    }
-
-    public Ingresso nomeEstadio(String nomeEstadio) {
-        this.nomeEstadio = nomeEstadio;
-        return this;
-    }
-
-    public void setNomeEstadio(String nomeEstadio) {
-        this.nomeEstadio = nomeEstadio;
     }
 
     public String getSetorEstadio() {
@@ -166,6 +127,19 @@ public class Ingresso implements Serializable {
 
     public void setAssentoEstadio(String assentoEstadio) {
         this.assentoEstadio = assentoEstadio;
+    }
+
+    public String getTimeVisitante() {
+        return this.timeVisitante;
+    }
+
+    public Ingresso timeVisitante(String timeVisitante) {
+        this.timeVisitante = timeVisitante;
+        return this;
+    }
+
+    public void setTimeVisitante(String timeVisitante) {
+        this.timeVisitante = timeVisitante;
     }
 
     public String getNomeComprador() {
@@ -259,6 +233,32 @@ public class Ingresso implements Serializable {
         this.emailComprador = emailComprador;
     }
 
+    public Time getTimeMandante() {
+        return this.timeMandante;
+    }
+
+    public Ingresso timeMandante(Time Time) {
+        this.setTimeMandante(Time);
+        return this;
+    }
+
+    public void setTimeMandante(Time Time) {
+        this.timeMandante = Time;
+    }
+
+    public Estadio getEstadio() {
+        return this.estadio;
+    }
+
+    public Ingresso estadio(Estadio Estadio) {
+        this.setEstadio(Estadio);
+        return this;
+    }
+
+    public void setEstadio(Estadio Estadio) {
+        this.estadio = Estadio;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -284,12 +284,10 @@ public class Ingresso implements Serializable {
         return "Ingresso{" +
             "id=" + getId() +
             ", horarioJogo='" + getHorarioJogo() + "'" +
-            ", timeMandante='" + getTimeMandante() + "'" +
-            ", timeVisitante='" + getTimeVisitante() + "'" +
             ", data='" + getData() + "'" +
-            ", nomeEstadio='" + getNomeEstadio() + "'" +
             ", setorEstadio='" + getSetorEstadio() + "'" +
             ", assentoEstadio='" + getAssentoEstadio() + "'" +
+            ", timeVisitante='" + getTimeVisitante() + "'" +
             ", nomeComprador='" + getNomeComprador() + "'" +
             ", cpfComprador='" + getCpfComprador() + "'" +
             ", nascimentoComprador='" + getNascimentoComprador() + "'" +

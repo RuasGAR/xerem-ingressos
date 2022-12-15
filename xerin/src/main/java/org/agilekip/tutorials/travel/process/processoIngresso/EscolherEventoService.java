@@ -72,9 +72,9 @@ public class EscolherEventoService {
     public void save(EscolherEventoContextDTO escolherEventoContext) {
         IngressoDTO ingressoDTO = ingressoService.findOne(escolherEventoContext.getProcessoIngresso().getIngresso().getId()).orElseThrow();
         ingressoDTO.setHorarioJogo(escolherEventoContext.getProcessoIngresso().getIngresso().getHorarioJogo());
-        ingressoDTO.setTimeMandante(escolherEventoContext.getProcessoIngresso().getIngresso().getTimeMandante());
-        ingressoDTO.setTimeVisitante(escolherEventoContext.getProcessoIngresso().getIngresso().getTimeVisitante());
         ingressoDTO.setData(escolherEventoContext.getProcessoIngresso().getIngresso().getData());
+        ingressoDTO.setTimeVisitante(escolherEventoContext.getProcessoIngresso().getIngresso().getTimeVisitante());
+        ingressoDTO.setTimeMandante(escolherEventoContext.getProcessoIngresso().getIngresso().getTimeMandante());
         ingressoService.save(ingressoDTO);
     }
 

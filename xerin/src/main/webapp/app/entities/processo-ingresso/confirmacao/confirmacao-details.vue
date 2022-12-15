@@ -57,15 +57,15 @@
               />
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('xeremIngressosApp.confirmacao.nomeEstadio')">nomeEstadio</label>
+              <label class="form-control-label" v-text="$t('xeremIngressosApp.confirmacao.estadio')">estadio</label>
               <input
                 readonly
                 type="text"
                 class="form-control"
-                name="nomeEstadio"
-                id="ingresso-nomeEstadio"
-                data-cy="nomeEstadio"
-                v-model="taskContext.processoIngresso.ingresso.nomeEstadio"
+                name="estadio"
+                id="ingresso-estadio"
+                data-cy="estadio"
+                v-model="taskContext.processoIngresso.ingresso.estadio"
               />
             </div>
             <div class="form-group">

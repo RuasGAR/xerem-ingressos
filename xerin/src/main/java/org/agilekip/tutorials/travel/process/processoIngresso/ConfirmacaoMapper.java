@@ -20,7 +20,7 @@ public interface ConfirmacaoMapper {
     @Mapping(target = "timeVisitante", source = "timeVisitante")
     @Mapping(target = "horarioJogo", source = "horarioJogo")
     @Mapping(target = "data", source = "data")
-    @Mapping(target = "nomeEstadio", source = "nomeEstadio")
+    @Mapping(target = "estadio", source = "estadio")
     @Mapping(target = "setorEstadio", source = "setorEstadio")
     @Mapping(target = "assentoEstadio", source = "assentoEstadio")
     @Mapping(target = "nomeComprador", source = "nomeComprador")

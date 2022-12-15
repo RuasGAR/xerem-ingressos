@@ -12,8 +12,6 @@ public class TimeDTO implements Serializable {
 
     private String nome;
 
-    private String nomeCasa;
-
     private String cidade;
 
     public Long getId() {
@@ -30,14 +28,6 @@ public class TimeDTO implements Serializable {
 
     public void setNome(String nome) {
         this.nome = nome;
-    }
-
-    public String getNomeCasa() {
-        return nomeCasa;
-    }
-
-    public void setNomeCasa(String nomeCasa) {
-        this.nomeCasa = nomeCasa;
     }
 
     public String getCidade() {
@@ -75,7 +65,6 @@ public class TimeDTO implements Serializable {
         return "TimeDTO{" +
             "id=" + getId() +
             ", nome='" + getNome() + "'" +
-            ", nomeCasa='" + getNomeCasa() + "'" +
             ", cidade='" + getCidade() + "'" +
             "}";
     }

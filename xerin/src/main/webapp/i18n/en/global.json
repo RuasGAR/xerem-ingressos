@@ -20,6 +20,7 @@
         "pagamento": "Pagamento",
         "confirmacao": "Confirmacao",
         "time": "Time",
+        "estadio": "Estadio",
         "jhipster-needle-menu-add-entry": "JHipster will add additional entities here (do not translate!)"
       },
       "account": {

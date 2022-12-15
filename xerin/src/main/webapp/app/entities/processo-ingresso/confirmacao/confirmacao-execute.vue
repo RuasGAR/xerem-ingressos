@@ -81,21 +81,21 @@
               </b-input-group>
             </div>
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('xeremIngressosApp.confirmacao.nomeEstadio')" for="confirmacao-nomeEstadio"
-                >Nome Estadio</label
+              <label class="form-control-label" v-text="$t('xeremIngressosApp.confirmacao.estadio')" for="confirmacao-estadio"
+                >Estadio</label
               >
               <input
                 type="text"
                 class="form-control"
-                name="nomeEstadio"
-                id="confirmacao-nomeEstadio"
+                name="estadio"
+                id="confirmacao-estadio"
                 readonly
-                data-cy="nomeEstadio"
+                data-cy="estadio"
                 :class="{
-                  valid: !$v.taskContext.processoIngresso.ingresso.nomeEstadio.$invalid,
-                  invalid: $v.taskContext.processoIngresso.ingresso.nomeEstadio.$invalid,
+                  valid: !$v.taskContext.processoIngresso.ingresso.estadio.$invalid,
+                  invalid: $v.taskContext.processoIngresso.ingresso.estadio.$invalid,
                 }"
-                v-model="$v.taskContext.processoIngresso.ingresso.nomeEstadio.$model"
+                v-model="$v.taskContext.processoIngresso.ingresso.estadio.$model"
               />
             </div>
             <div class="form-group">

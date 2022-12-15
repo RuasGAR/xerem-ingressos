@@ -1,10 +1,6 @@
 {
   "fields": [
     {
-      "fieldName": "nomeEstadio",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "setorEstadio",
       "fieldType": "String"
     },
@@ -13,7 +9,14 @@
       "fieldType": "String"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipName": "estadio",
+      "otherEntityName": "Estadio",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "nome"
+    }
+  ],
   "entityType": "user-task-form",
   "processBpmnId": "ProcessoIngresso",
   "processEntityName": "ProcessoIngresso",

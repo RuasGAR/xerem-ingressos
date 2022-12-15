@@ -30,34 +30,6 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
-                  <label class="form-control-label" v-text="$t('xeremIngressosApp.processoIngresso.timeMandante')">timeMandante</label>
-                  <input
-                    readonly
-                    type="text"
-                    class="form-control"
-                    name="timeMandante"
-                    id="ingresso-timeMandante"
-                    data-cy="timeMandante"
-                    v-model="processoIngresso.ingresso.timeMandante"
-                  />
-                </div>
-              </div>
-              <div class="card-body py-0">
-                <div class="form-group">
-                  <label class="form-control-label" v-text="$t('xeremIngressosApp.processoIngresso.timeVisitante')">timeVisitante</label>
-                  <input
-                    readonly
-                    type="text"
-                    class="form-control"
-                    name="timeVisitante"
-                    id="ingresso-timeVisitante"
-                    data-cy="timeVisitante"
-                    v-model="processoIngresso.ingresso.timeVisitante"
-                  />
-                </div>
-              </div>
-              <div class="card-body py-0">
-                <div class="form-group">
                   <label class="form-control-label" v-text="$t('xeremIngressosApp.processoIngresso.data')">data</label>
                   <input
                     readonly
@@ -67,20 +39,6 @@
                     id="ingresso-data"
                     data-cy="data"
                     v-model="processoIngresso.ingresso.data"
-                  />
-                </div>
-              </div>
-              <div class="card-body py-0">
-                <div class="form-group">
-                  <label class="form-control-label" v-text="$t('xeremIngressosApp.processoIngresso.nomeEstadio')">nomeEstadio</label>
-                  <input
-                    readonly
-                    type="text"
-                    class="form-control"
-                    name="nomeEstadio"
-                    id="ingresso-nomeEstadio"
-                    data-cy="nomeEstadio"
-                    v-model="processoIngresso.ingresso.nomeEstadio"
                   />
                 </div>
               </div>
@@ -210,6 +168,57 @@
                     data-cy="emailComprador"
                     v-model="processoIngresso.ingresso.emailComprador"
                   />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label
+                    class="form-control-label"
+                    v-text="$t('xeremIngressosApp.processoIngresso.timeMandante')"
+                    for="processo-ingresso-timeMandante"
+                    >Time Mandante</label
+                  >
+                  <input
+                    v-if="processoIngresso.ingresso.timeMandante"
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="timeMandante"
+                    id="ingresso-timeMandante"
+                    data-cy="timeMandante"
+                    :value="processoIngresso.ingresso.timeMandante.nome"
+                  />
+                  <input
+                    v-else
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="timeMandante"
+                    id="ingresso-timeMandante"
+                    data-cy="timeMandante"
+                    value=""
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label
+                    class="form-control-label"
+                    v-text="$t('xeremIngressosApp.processoIngresso.estadio')"
+                    for="processo-ingresso-estadio"
+                    >Estadio</label
+                  >
+                  <input
+                    v-if="processoIngresso.ingresso.estadio"
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="estadio"
+                    id="ingresso-estadio"
+                    data-cy="estadio"
+                    :value="processoIngresso.ingresso.estadio.nome"
+                  />
+                  <input v-else readonly type="text" class="form-control" name="estadio" id="ingresso-estadio" data-cy="estadio" value="" />
                 </div>
               </div>
             </div>

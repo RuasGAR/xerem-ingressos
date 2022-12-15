@@ -6,7 +6,6 @@ import TimeService from './time.service';
 const validations: any = {
   time: {
     nome: {},
-    nomeCasa: {},
     cidade: {},
   },
 };

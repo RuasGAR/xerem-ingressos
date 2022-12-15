@@ -13,17 +13,13 @@ public class IngressoDTO implements Serializable {
 
     private String horarioJogo;
 
-    private String timeMandante;
-
-    private String timeVisitante;
-
     private LocalDate data;
-
-    private String nomeEstadio;
 
     private String setorEstadio;
 
     private String assentoEstadio;
+
+    private String timeVisitante;
 
     private String nomeComprador;
 
@@ -38,6 +34,10 @@ public class IngressoDTO implements Serializable {
     private Integer codigoCartao;
 
     private String emailComprador;
+
+    private TimeDTO timeMandante;
+
+    private EstadioDTO estadio;
 
     public Long getId() {
         return id;
@@ -55,36 +55,12 @@ public class IngressoDTO implements Serializable {
         this.horarioJogo = horarioJogo;
     }
 
-    public String getTimeMandante() {
-        return timeMandante;
-    }
-
-    public void setTimeMandante(String timeMandante) {
-        this.timeMandante = timeMandante;
-    }
-
-    public String getTimeVisitante() {
-        return timeVisitante;
-    }
-
-    public void setTimeVisitante(String timeVisitante) {
-        this.timeVisitante = timeVisitante;
-    }
-
     public LocalDate getData() {
         return data;
     }
 
     public void setData(LocalDate data) {
         this.data = data;
-    }
-
-    public String getNomeEstadio() {
-        return nomeEstadio;
-    }
-
-    public void setNomeEstadio(String nomeEstadio) {
-        this.nomeEstadio = nomeEstadio;
     }
 
     public String getSetorEstadio() {
@@ -101,6 +77,14 @@ public class IngressoDTO implements Serializable {
 
     public void setAssentoEstadio(String assentoEstadio) {
         this.assentoEstadio = assentoEstadio;
+    }
+
+    public String getTimeVisitante() {
+        return timeVisitante;
+    }
+
+    public void setTimeVisitante(String timeVisitante) {
+        this.timeVisitante = timeVisitante;
     }
 
     public String getNomeComprador() {
@@ -159,6 +143,22 @@ public class IngressoDTO implements Serializable {
         this.emailComprador = emailComprador;
     }
 
+    public TimeDTO getTimeMandante() {
+        return timeMandante;
+    }
+
+    public void setTimeMandante(TimeDTO timeMandante) {
+        this.timeMandante = timeMandante;
+    }
+
+    public EstadioDTO getEstadio() {
+        return estadio;
+    }
+
+    public void setEstadio(EstadioDTO estadio) {
+        this.estadio = estadio;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -186,12 +186,10 @@ public class IngressoDTO implements Serializable {
         return "IngressoDTO{" +
             "id=" + getId() +
             ", horarioJogo='" + getHorarioJogo() + "'" +
-            ", timeMandante='" + getTimeMandante() + "'" +
-            ", timeVisitante='" + getTimeVisitante() + "'" +
             ", data='" + getData() + "'" +
-            ", nomeEstadio='" + getNomeEstadio() + "'" +
             ", setorEstadio='" + getSetorEstadio() + "'" +
             ", assentoEstadio='" + getAssentoEstadio() + "'" +
+            ", timeVisitante='" + getTimeVisitante() + "'" +
             ", nomeComprador='" + getNomeComprador() + "'" +
             ", cpfComprador='" + getCpfComprador() + "'" +
             ", nascimentoComprador='" + getNascimentoComprador() + "'" +
@@ -199,6 +197,8 @@ public class IngressoDTO implements Serializable {
             ", validadeCartao='" + getValidadeCartao() + "'" +
             ", codigoCartao=" + getCodigoCartao() +
             ", emailComprador='" + getEmailComprador() + "'" +
+            ", timeMandante=" + getTimeMandante() +
+            ", estadio=" + getEstadio() +
             "}";
     }
 }

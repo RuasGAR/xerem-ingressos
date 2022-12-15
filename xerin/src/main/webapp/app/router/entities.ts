@@ -34,6 +34,12 @@ const Time = () => import('@/entities/time/time.vue');
 const TimeUpdate = () => import('@/entities/time/time-update.vue');
 // prettier-ignore
 const TimeDetails = () => import('@/entities/time/time-details.vue');
+// prettier-ignore
+const Estadio = () => import('@/entities/estadio/estadio.vue');
+// prettier-ignore
+const EstadioUpdate = () => import('@/entities/estadio/estadio-update.vue');
+// prettier-ignore
+const EstadioDetails = () => import('@/entities/estadio/estadio-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -137,6 +143,30 @@ export default [
     path: '/time/:timeId/view',
     name: 'TimeView',
     component: TimeDetails,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/estadio',
+    name: 'Estadio',
+    component: Estadio,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/estadio/new',
+    name: 'EstadioCreate',
+    component: EstadioUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/estadio/:estadioId/edit',
+    name: 'EstadioEdit',
+    component: EstadioUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/estadio/:estadioId/view',
+    name: 'EstadioView',
+    component: EstadioDetails,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

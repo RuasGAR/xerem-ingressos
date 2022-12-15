@@ -29,46 +29,6 @@
               />
             </div>
             <div class="form-group">
-              <label
-                class="form-control-label"
-                v-text="$t('xeremIngressosApp.escolherEvento.timeMandante')"
-                for="escolher-evento-timeMandante"
-                >Time Mandante</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                name="timeMandante"
-                id="escolher-evento-timeMandante"
-                data-cy="timeMandante"
-                :class="{
-                  valid: !$v.taskContext.processoIngresso.ingresso.timeMandante.$invalid,
-                  invalid: $v.taskContext.processoIngresso.ingresso.timeMandante.$invalid,
-                }"
-                v-model="$v.taskContext.processoIngresso.ingresso.timeMandante.$model"
-              />
-            </div>
-            <div class="form-group">
-              <label
-                class="form-control-label"
-                v-text="$t('xeremIngressosApp.escolherEvento.timeVisitante')"
-                for="escolher-evento-timeVisitante"
-                >Time Visitante</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                name="timeVisitante"
-                id="escolher-evento-timeVisitante"
-                data-cy="timeVisitante"
-                :class="{
-                  valid: !$v.taskContext.processoIngresso.ingresso.timeVisitante.$invalid,
-                  invalid: $v.taskContext.processoIngresso.ingresso.timeVisitante.$invalid,
-                }"
-                v-model="$v.taskContext.processoIngresso.ingresso.timeVisitante.$model"
-              />
-            </div>
-            <div class="form-group">
               <label class="form-control-label" v-text="$t('xeremIngressosApp.escolherEvento.data')" for="escolher-evento-data">Data</label>
               <b-input-group class="mb-3">
                 <b-input-group-prepend>
@@ -99,6 +59,55 @@
                   v-model="$v.taskContext.processoIngresso.ingresso.data.$model"
                 />
               </b-input-group>
+            </div>
+            <div class="form-group">
+              <label
+                class="form-control-label"
+                v-text="$t('xeremIngressosApp.escolherEvento.timeVisitante')"
+                for="escolher-evento-timeVisitante"
+                >Time Visitante</label
+              >
+              <input
+                type="text"
+                class="form-control"
+                name="timeVisitante"
+                id="escolher-evento-timeVisitante"
+                data-cy="timeVisitante"
+                :class="{
+                  valid: !$v.taskContext.processoIngresso.ingresso.timeVisitante.$invalid,
+                  invalid: $v.taskContext.processoIngresso.ingresso.timeVisitante.$invalid,
+                }"
+                v-model="$v.taskContext.processoIngresso.ingresso.timeVisitante.$model"
+              />
+            </div>
+            <div class="form-group">
+              <label
+                class="form-control-label"
+                v-text="$t('xeremIngressosApp.escolherEvento.timeMandante')"
+                for="escolher-evento-timeMandante"
+                >Time Mandante</label
+              >
+              <select
+                class="form-control"
+                id="escolher-evento-timeMandante"
+                data-cy="timeMandante"
+                name="timeMandante"
+                v-model="taskContext.processoIngresso.ingresso.timeMandante"
+              >
+                <option v-bind:value="null"></option>
+                <option
+                  v-bind:value="
+                    taskContext.processoIngresso.ingresso.timeMandante &&
+                    TimeOption.id === taskContext.processoIngresso.ingresso.timeMandante.id
+                      ? taskContext.processoIngresso.ingresso.timeMandante
+                      : TimeOption
+                  "
+                  v-for="TimeOption in Times"
+                  :key="TimeOption.id"
+                >
+                  {{ TimeOption.nome }}
+                </option>
+              </select>
             </div>
           </template>
         </akip-show-task-instance>

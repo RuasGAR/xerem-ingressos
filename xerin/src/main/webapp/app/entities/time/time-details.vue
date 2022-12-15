@@ -13,12 +13,6 @@
             <span>{{ time.nome }}</span>
           </dd>
           <dt>
-            <span v-text="$t('xeremIngressosApp.time.nomeCasa')">Nome Casa</span>
-          </dt>
-          <dd>
-            <span>{{ time.nomeCasa }}</span>
-          </dd>
-          <dt>
             <span v-text="$t('xeremIngressosApp.time.cidade')">Cidade</span>
           </dt>
           <dd>

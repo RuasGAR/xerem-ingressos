@@ -17,9 +17,6 @@
             <column name="nome" type="varchar(255)">
                 <constraints nullable="true" />
             </column>
-            <column name="nome_casa" type="varchar(255)">
-                <constraints nullable="true" />
-            </column>
             <column name="cidade" type="varchar(255)">
                 <constraints nullable="true" />
             </column>

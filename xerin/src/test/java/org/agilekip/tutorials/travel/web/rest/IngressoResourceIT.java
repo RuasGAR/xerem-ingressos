@@ -36,23 +36,17 @@ class IngressoResourceIT {
     private static final String DEFAULT_HORARIO_JOGO = "AAAAAAAAAA";
     private static final String UPDATED_HORARIO_JOGO = "BBBBBBBBBB";
 
-    private static final String DEFAULT_TIME_MANDANTE = "AAAAAAAAAA";
-    private static final String UPDATED_TIME_MANDANTE = "BBBBBBBBBB";
-
-    private static final String DEFAULT_TIME_VISITANTE = "AAAAAAAAAA";
-    private static final String UPDATED_TIME_VISITANTE = "BBBBBBBBBB";
-
     private static final LocalDate DEFAULT_DATA = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_DATA = LocalDate.now(ZoneId.systemDefault());
-
-    private static final String DEFAULT_NOME_ESTADIO = "AAAAAAAAAA";
-    private static final String UPDATED_NOME_ESTADIO = "BBBBBBBBBB";
 
     private static final String DEFAULT_SETOR_ESTADIO = "AAAAAAAAAA";
     private static final String UPDATED_SETOR_ESTADIO = "BBBBBBBBBB";
 
     private static final String DEFAULT_ASSENTO_ESTADIO = "AAAAAAAAAA";
     private static final String UPDATED_ASSENTO_ESTADIO = "BBBBBBBBBB";
+
+    private static final String DEFAULT_TIME_VISITANTE = "AAAAAAAAAA";
+    private static final String UPDATED_TIME_VISITANTE = "BBBBBBBBBB";
 
     private static final String DEFAULT_NOME_COMPRADOR = "AAAAAAAAAA";
     private static final String UPDATED_NOME_COMPRADOR = "BBBBBBBBBB";
@@ -104,12 +98,10 @@ class IngressoResourceIT {
     public static Ingresso createEntity(EntityManager em) {
         Ingresso ingresso = new Ingresso()
             .horarioJogo(DEFAULT_HORARIO_JOGO)
-            .timeMandante(DEFAULT_TIME_MANDANTE)
-            .timeVisitante(DEFAULT_TIME_VISITANTE)
             .data(DEFAULT_DATA)
-            .nomeEstadio(DEFAULT_NOME_ESTADIO)
             .setorEstadio(DEFAULT_SETOR_ESTADIO)
             .assentoEstadio(DEFAULT_ASSENTO_ESTADIO)
+            .timeVisitante(DEFAULT_TIME_VISITANTE)
             .nomeComprador(DEFAULT_NOME_COMPRADOR)
             .cpfComprador(DEFAULT_CPF_COMPRADOR)
             .nascimentoComprador(DEFAULT_NASCIMENTO_COMPRADOR)
@@ -129,12 +121,10 @@ class IngressoResourceIT {
     public static Ingresso createUpdatedEntity(EntityManager em) {
         Ingresso ingresso = new Ingresso()
             .horarioJogo(UPDATED_HORARIO_JOGO)
-            .timeMandante(UPDATED_TIME_MANDANTE)
-            .timeVisitante(UPDATED_TIME_VISITANTE)
             .data(UPDATED_DATA)
-            .nomeEstadio(UPDATED_NOME_ESTADIO)
             .setorEstadio(UPDATED_SETOR_ESTADIO)
             .assentoEstadio(UPDATED_ASSENTO_ESTADIO)
+            .timeVisitante(UPDATED_TIME_VISITANTE)
             .nomeComprador(UPDATED_NOME_COMPRADOR)
             .cpfComprador(UPDATED_CPF_COMPRADOR)
             .nascimentoComprador(UPDATED_NASCIMENTO_COMPRADOR)
@@ -163,12 +153,10 @@ class IngressoResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.[*].id").value(hasItem(ingresso.getId().intValue())))
             .andExpect(jsonPath("$.[*].horarioJogo").value(hasItem(DEFAULT_HORARIO_JOGO)))
-            .andExpect(jsonPath("$.[*].timeMandante").value(hasItem(DEFAULT_TIME_MANDANTE)))
-            .andExpect(jsonPath("$.[*].timeVisitante").value(hasItem(DEFAULT_TIME_VISITANTE)))
             .andExpect(jsonPath("$.[*].data").value(hasItem(DEFAULT_DATA.toString())))
-            .andExpect(jsonPath("$.[*].nomeEstadio").value(hasItem(DEFAULT_NOME_ESTADIO)))
             .andExpect(jsonPath("$.[*].setorEstadio").value(hasItem(DEFAULT_SETOR_ESTADIO)))
             .andExpect(jsonPath("$.[*].assentoEstadio").value(hasItem(DEFAULT_ASSENTO_ESTADIO)))
+            .andExpect(jsonPath("$.[*].timeVisitante").value(hasItem(DEFAULT_TIME_VISITANTE)))
             .andExpect(jsonPath("$.[*].nomeComprador").value(hasItem(DEFAULT_NOME_COMPRADOR)))
             .andExpect(jsonPath("$.[*].cpfComprador").value(hasItem(DEFAULT_CPF_COMPRADOR)))
             .andExpect(jsonPath("$.[*].nascimentoComprador").value(hasItem(DEFAULT_NASCIMENTO_COMPRADOR.toString())))
@@ -191,12 +179,10 @@ class IngressoResourceIT {
             .andExpect(content().contentType(MediaType.APPLICATION_JSON_VALUE))
             .andExpect(jsonPath("$.id").value(ingresso.getId().intValue()))
             .andExpect(jsonPath("$.horarioJogo").value(DEFAULT_HORARIO_JOGO))
-            .andExpect(jsonPath("$.timeMandante").value(DEFAULT_TIME_MANDANTE))
-            .andExpect(jsonPath("$.timeVisitante").value(DEFAULT_TIME_VISITANTE))
             .andExpect(jsonPath("$.data").value(DEFAULT_DATA.toString()))
-            .andExpect(jsonPath("$.nomeEstadio").value(DEFAULT_NOME_ESTADIO))
             .andExpect(jsonPath("$.setorEstadio").value(DEFAULT_SETOR_ESTADIO))
             .andExpect(jsonPath("$.assentoEstadio").value(DEFAULT_ASSENTO_ESTADIO))
+            .andExpect(jsonPath("$.timeVisitante").value(DEFAULT_TIME_VISITANTE))
             .andExpect(jsonPath("$.nomeComprador").value(DEFAULT_NOME_COMPRADOR))
             .andExpect(jsonPath("$.cpfComprador").value(DEFAULT_CPF_COMPRADOR))
             .andExpect(jsonPath("$.nascimentoComprador").value(DEFAULT_NASCIMENTO_COMPRADOR.toString()))

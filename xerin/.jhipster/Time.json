@@ -5,10 +5,6 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "nomeCasa",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "cidade",
       "fieldType": "String"
     }

@@ -5,20 +5,8 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "timeMandante",
-      "fieldType": "String"
-    },
-    {
-      "fieldName": "timeVisitante",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "data",
       "fieldType": "LocalDate"
-    },
-    {
-      "fieldName": "nomeEstadio",
-      "fieldType": "String"
     },
     {
       "fieldName": "setorEstadio",
@@ -26,6 +14,10 @@
     },
     {
       "fieldName": "assentoEstadio",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "timeVisitante",
       "fieldType": "String"
     },
     {
@@ -57,7 +49,20 @@
       "fieldType": "String"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipName": "timeMandante",
+      "otherEntityName": "Time",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "nome"
+    },
+    {
+      "relationshipName": "estadio",
+      "otherEntityName": "Estadio",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "nome"
+    }
+  ],
   "entityType": "domain",
   "service": "serviceClass",
   "dto": "mapstruct",

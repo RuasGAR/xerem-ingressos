@@ -13,28 +13,10 @@
             <span>{{ ingresso.horarioJogo }}</span>
           </dd>
           <dt>
-            <span v-text="$t('xeremIngressosApp.ingresso.timeMandante')">Time Mandante</span>
-          </dt>
-          <dd>
-            <span>{{ ingresso.timeMandante }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('xeremIngressosApp.ingresso.timeVisitante')">Time Visitante</span>
-          </dt>
-          <dd>
-            <span>{{ ingresso.timeVisitante }}</span>
-          </dd>
-          <dt>
             <span v-text="$t('xeremIngressosApp.ingresso.data')">Data</span>
           </dt>
           <dd>
             <span>{{ ingresso.data }}</span>
-          </dd>
-          <dt>
-            <span v-text="$t('xeremIngressosApp.ingresso.nomeEstadio')">Nome Estadio</span>
-          </dt>
-          <dd>
-            <span>{{ ingresso.nomeEstadio }}</span>
           </dd>
           <dt>
             <span v-text="$t('xeremIngressosApp.ingresso.setorEstadio')">Setor Estadio</span>
@@ -47,6 +29,12 @@
           </dt>
           <dd>
             <span>{{ ingresso.assentoEstadio }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('xeremIngressosApp.ingresso.timeVisitante')">Time Visitante</span>
+          </dt>
+          <dd>
+            <span>{{ ingresso.timeVisitante }}</span>
           </dd>
           <dt>
             <span v-text="$t('xeremIngressosApp.ingresso.nomeComprador')">Nome Comprador</span>
@@ -89,6 +77,26 @@
           </dt>
           <dd>
             <span>{{ ingresso.emailComprador }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('xeremIngressosApp.ingresso.timeMandante')">Time Mandante</span>
+          </dt>
+          <dd>
+            <div v-if="ingresso.timeMandante">
+              <router-link :to="{ name: 'TimeView', params: { TimeId: ingresso.timeMandante.id } }">{{
+                ingresso.timeMandante.nome
+              }}</router-link>
+            </div>
+          </dd>
+          <dt>
+            <span v-text="$t('xeremIngressosApp.ingresso.estadio')">Estadio</span>
+          </dt>
+          <dd>
+            <div v-if="ingresso.estadio">
+              <router-link :to="{ name: 'EstadioView', params: { EstadioId: ingresso.estadio.id } }">{{
+                ingresso.estadio.nome
+              }}</router-link>
+            </div>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

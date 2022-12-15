@@ -19,12 +19,10 @@
           <tr>
             <th scope="row"><span v-text="$t('global.field.id')">ID</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.horarioJogo')">Horario Jogo</span></th>
-            <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.timeMandante')">Time Mandante</span></th>
-            <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.timeVisitante')">Time Visitante</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.data')">Data</span></th>
-            <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.nomeEstadio')">Nome Estadio</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.setorEstadio')">Setor Estadio</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.assentoEstadio')">Assento Estadio</span></th>
+            <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.timeVisitante')">Time Visitante</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.nomeComprador')">Nome Comprador</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.cpfComprador')">Cpf Comprador</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.nascimentoComprador')">Nascimento Comprador</span></th>
@@ -32,6 +30,8 @@
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.validadeCartao')">Validade Cartao</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.codigoCartao')">Codigo Cartao</span></th>
             <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.emailComprador')">Email Comprador</span></th>
+            <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.timeMandante')">Time Mandante</span></th>
+            <th scope="row"><span v-text="$t('xeremIngressosApp.ingresso.estadio')">Estadio</span></th>
             <th scope="row"></th>
           </tr>
         </thead>
@@ -41,12 +41,10 @@
               <router-link :to="{ name: 'IngressoView', params: { ingressoId: ingresso.id } }">{{ ingresso.id }}</router-link>
             </td>
             <td>{{ ingresso.horarioJogo }}</td>
-            <td>{{ ingresso.timeMandante }}</td>
-            <td>{{ ingresso.timeVisitante }}</td>
             <td>{{ ingresso.data }}</td>
-            <td>{{ ingresso.nomeEstadio }}</td>
             <td>{{ ingresso.setorEstadio }}</td>
             <td>{{ ingresso.assentoEstadio }}</td>
+            <td>{{ ingresso.timeVisitante }}</td>
             <td>{{ ingresso.nomeComprador }}</td>
             <td>{{ ingresso.cpfComprador }}</td>
             <td>{{ ingresso.nascimentoComprador }}</td>
@@ -54,6 +52,20 @@
             <td>{{ ingresso.validadeCartao }}</td>
             <td>{{ ingresso.codigoCartao }}</td>
             <td>{{ ingresso.emailComprador }}</td>
+            <td>
+              <div v-if="ingresso.timeMandante">
+                <router-link :to="{ name: 'TimeView', params: { TimeId: ingresso.timeMandante.id } }">{{
+                  ingresso.timeMandante.nome
+                }}</router-link>
+              </div>
+            </td>
+            <td>
+              <div v-if="ingresso.estadio">
+                <router-link :to="{ name: 'EstadioView', params: { EstadioId: ingresso.estadio.id } }">{{
+                  ingresso.estadio.nome
+                }}</router-link>
+              </div>
+            </td>
             <td class="text-right">
               <div class="btn-group">
                 <router-link :to="{ name: 'IngressoView', params: { ingressoId: ingresso.id } }" custom v-slot="{ navigate }">

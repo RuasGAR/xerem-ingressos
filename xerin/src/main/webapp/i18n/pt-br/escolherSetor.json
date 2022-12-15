@@ -18,9 +18,9 @@
         "title": "Escolher Setor"
       },
       "id": "ID",
-      "nomeEstadio": "Nome Estadio",
       "setorEstadio": "Setor Estadio",
-      "assentoEstadio": "Assento Estadio"
+      "assentoEstadio": "Assento Estadio",
+      "estadio": "Estadio"
     }
   }
 }

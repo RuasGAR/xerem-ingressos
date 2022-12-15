@@ -1,5 +1,8 @@
 import { Component, Vue, Inject } from 'vue-property-decorator';
 
+import EstadioService from '@/entities/estadio/estadio.service';
+import { IEstadio } from '@/shared/model/estadio.model';
+
 import EscolherSetorService from './escolher-setor.service';
 import { EscolherSetorContext } from './escolher-setor.model';
 
@@ -7,7 +10,6 @@ const validations: any = {
   taskContext: {
     processoIngresso: {
       ingresso: {
-        nomeEstadio: {},
         setorEstadio: {},
         assentoEstadio: {},
       },
@@ -21,6 +23,10 @@ const validations: any = {
 export default class EscolherSetorExecuteComponent extends Vue {
   private escolherSetorService: EscolherSetorService = new EscolherSetorService();
   private taskContext: EscolherSetorContext = {};
+
+  @Inject('EstadioService') private EstadioService: () => EstadioService;
+
+  public Estadios: IEstadio[] = [];
   public isSaving = false;
 
   beforeRouteEnter(to, from, next) {
@@ -28,6 +34,7 @@ export default class EscolherSetorExecuteComponent extends Vue {
       if (to.params.taskInstanceId) {
         vm.claimTaskInstance(to.params.taskInstanceId);
       }
+      vm.initRelationships();
     });
   }
 
@@ -47,5 +54,11 @@ export default class EscolherSetorExecuteComponent extends Vue {
     });
   }
 
-  public initRelationships(): void {}
+  public initRelationships(): void {
+    this.EstadioService()
+      .retrieve()
+      .then(res => {
+        this.Estadios = res.data;
+      });
+  }
 }

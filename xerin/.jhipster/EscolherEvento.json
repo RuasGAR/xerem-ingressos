@@ -5,19 +5,22 @@
       "fieldType": "String"
     },
     {
-      "fieldName": "timeMandante",
-      "fieldType": "String"
+      "fieldName": "data",
+      "fieldType": "LocalDate"
     },
     {
       "fieldName": "timeVisitante",
       "fieldType": "String"
-    },
-    {
-      "fieldName": "data",
-      "fieldType": "LocalDate"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipName": "timeMandante",
+      "otherEntityName": "Time",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "nome"
+    }
+  ],
   "entityType": "user-task-form",
   "processBpmnId": "ProcessoIngresso",
   "processEntityName": "ProcessoIngresso",

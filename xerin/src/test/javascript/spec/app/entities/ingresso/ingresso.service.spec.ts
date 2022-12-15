@@ -36,8 +36,6 @@ describe('Service Tests', () => {
       elemDefault = new Ingresso(
         0,
         'AAAAAAA',
-        'AAAAAAA',
-        'AAAAAAA',
         currentDate,
         'AAAAAAA',
         'AAAAAAA',
@@ -82,12 +80,10 @@ describe('Service Tests', () => {
         const returnedFromService = Object.assign(
           {
             horarioJogo: 'BBBBBB',
-            timeMandante: 'BBBBBB',
-            timeVisitante: 'BBBBBB',
             data: dayjs(currentDate).format(DATE_FORMAT),
-            nomeEstadio: 'BBBBBB',
             setorEstadio: 'BBBBBB',
             assentoEstadio: 'BBBBBB',
+            timeVisitante: 'BBBBBB',
             nomeComprador: 'BBBBBB',
             cpfComprador: 'BBBBBB',
             nascimentoComprador: dayjs(currentDate).format(DATE_FORMAT),
