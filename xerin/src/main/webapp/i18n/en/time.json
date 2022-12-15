@@ -1,0 +1,26 @@
+{
+  "xeremIngressosApp": {
+    "time": {
+      "home": {
+        "title": "Times",
+        "refreshListLabel": "Refresh list",
+        "createLabel": "Create a new Time",
+        "createOrEditLabel": "Create or edit a Time",
+        "notFound": "No Times found"
+      },
+      "created": "A new Time is created with identifier {{ param }}",
+      "updated": "A Time is updated with identifier {{ param }}",
+      "deleted": "A Time is deleted with identifier {{ param }}",
+      "delete": {
+        "question": "Are you sure you want to delete Time {{ id }}?"
+      },
+      "detail": {
+        "title": "Time"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "nomeCasa": "Nome Casa",
+      "cidade": "Cidade"
+    }
+  }
+}

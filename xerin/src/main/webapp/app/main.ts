@@ -33,6 +33,7 @@ import UserOAuth2Service from '@/entities/user/user.oauth2.service';
 
 import IngressoService from '@/entities/ingresso/ingresso.service';
 import ProcessoIngressoService from '@/entities/processo-ingresso/processo-ingresso.service';
+import TimeService from '@/entities/time/time.service';
 // jhipster-needle-add-entity-service-to-main-import - JHipster will import entities services here
 
 /* tslint:enable */
@@ -98,6 +99,7 @@ new Vue({
     translationService: () => translationService,
     ingressoService: () => new IngressoService(),
     processoIngressoService: () => new ProcessoIngressoService(),
+    timeService: () => new TimeService(),
     // jhipster-needle-add-entity-service-to-main - JHipster will import entities services here
     accountService: () => accountService,
   },

@@ -1,0 +1,26 @@
+{
+  "xeremIngressosApp": {
+    "time": {
+      "home": {
+        "title": "Times",
+        "refreshListLabel": "Atualizar lista",
+        "createLabel": "Criar novo Time",
+        "createOrEditLabel": "Criar ou editar Time",
+        "notFound": "Nenhum Time encontrado"
+      },
+      "created": "Um novo Time foi criado com o identificador {{ param }}",
+      "updated": "Um Time foi atualizado com o identificador {{ param }}",
+      "deleted": "Um Time foi excluído com o identificador {{ param }}",
+      "delete": {
+        "question": "Tem certeza de que deseja excluir Time {{ id }}?"
+      },
+      "detail": {
+        "title": "Time"
+      },
+      "id": "ID",
+      "nome": "Nome",
+      "nomeCasa": "Nome Casa",
+      "cidade": "Cidade"
+    }
+  }
+}

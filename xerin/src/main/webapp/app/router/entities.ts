@@ -28,6 +28,12 @@ const ProcessoIngresso_PagamentoExecute = () => import('@/entities/processo-ingr
 const ProcessoIngresso_ConfirmacaoDetails = () => import('@/entities/processo-ingresso/confirmacao/confirmacao-details.vue');
 // prettier-ignore
 const ProcessoIngresso_ConfirmacaoExecute = () => import('@/entities/processo-ingresso/confirmacao/confirmacao-execute.vue');
+// prettier-ignore
+const Time = () => import('@/entities/time/time.vue');
+// prettier-ignore
+const TimeUpdate = () => import('@/entities/time/time-update.vue');
+// prettier-ignore
+const TimeDetails = () => import('@/entities/time/time-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -107,6 +113,30 @@ export default [
     path: '/process-definition/ProcessoIngresso/task/Confirmacao/:taskInstanceId/execute',
     name: 'ProcessoIngresso_ConfirmacaoExecute',
     component: ProcessoIngresso_ConfirmacaoExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/time',
+    name: 'Time',
+    component: Time,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/time/new',
+    name: 'TimeCreate',
+    component: TimeUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/time/:timeId/edit',
+    name: 'TimeEdit',
+    component: TimeUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/time/:timeId/view',
+    name: 'TimeView',
+    component: TimeDetails,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here
