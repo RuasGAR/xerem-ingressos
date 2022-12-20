@@ -71,9 +71,9 @@ public class EscolherSetorService {
 
     public void save(EscolherSetorContextDTO escolherSetorContext) {
         IngressoDTO ingressoDTO = ingressoService.findOne(escolherSetorContext.getProcessoIngresso().getIngresso().getId()).orElseThrow();
-        ingressoDTO.setNomeEstadio(escolherSetorContext.getProcessoIngresso().getIngresso().getNomeEstadio());
         ingressoDTO.setSetorEstadio(escolherSetorContext.getProcessoIngresso().getIngresso().getSetorEstadio());
         ingressoDTO.setAssentoEstadio(escolherSetorContext.getProcessoIngresso().getIngresso().getAssentoEstadio());
+        ingressoDTO.setNomeEstadio(escolherSetorContext.getProcessoIngresso().getIngresso().getNomeEstadio());
         ingressoService.save(ingressoDTO);
     }
 

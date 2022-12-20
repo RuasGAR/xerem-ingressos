@@ -31,12 +31,6 @@
             <span>{{ ingresso.data }}</span>
           </dd>
           <dt>
-            <span v-text="$t('xeremIngressosApp.ingresso.nomeEstadio')">Nome Estadio</span>
-          </dt>
-          <dd>
-            <span>{{ ingresso.nomeEstadio }}</span>
-          </dd>
-          <dt>
             <span v-text="$t('xeremIngressosApp.ingresso.setorEstadio')">Setor Estadio</span>
           </dt>
           <dd>
@@ -89,6 +83,16 @@
           </dt>
           <dd>
             <span>{{ ingresso.emailComprador }}</span>
+          </dd>
+          <dt>
+            <span v-text="$t('xeremIngressosApp.ingresso.nomeEstadio')">Nome Estadio</span>
+          </dt>
+          <dd>
+            <div v-if="ingresso.nomeEstadio">
+              <router-link :to="{ name: 'EstadioView', params: { EstadioId: ingresso.nomeEstadio.id } }">{{
+                ingresso.nomeEstadio.nome
+              }}</router-link>
+            </div>
           </dd>
         </dl>
         <button type="submit" v-on:click.prevent="previousState()" class="btn btn-info" data-cy="entityDetailsBackButton">

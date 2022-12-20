@@ -17,10 +17,6 @@
       "fieldType": "LocalDate"
     },
     {
-      "fieldName": "nomeEstadio",
-      "fieldType": "String"
-    },
-    {
       "fieldName": "setorEstadio",
       "fieldType": "String"
     },
@@ -57,7 +53,14 @@
       "fieldType": "String"
     }
   ],
-  "relationships": [],
+  "relationships": [
+    {
+      "relationshipName": "nomeEstadio",
+      "otherEntityName": "Estadio",
+      "relationshipType": "many-to-one",
+      "otherEntityField": "nome"
+    }
+  ],
   "entityType": "domain",
   "service": "serviceClass",
   "dto": "mapstruct",

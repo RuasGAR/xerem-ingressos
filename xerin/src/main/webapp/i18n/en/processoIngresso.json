@@ -22,7 +22,6 @@
       "timeMandante": "Time Mandante",
       "timeVisitante": "Time Visitante",
       "data": "Data",
-      "nomeEstadio": "Nome Estadio",
       "setorEstadio": "Setor Estadio",
       "assentoEstadio": "Assento Estadio",
       "nomeComprador": "Nome Comprador",
@@ -31,7 +30,8 @@
       "numeroCartao": "Numero Cartao",
       "validadeCartao": "Validade Cartao",
       "codigoCartao": "Codigo Cartao",
-      "emailComprador": "Email Comprador"
+      "emailComprador": "Email Comprador",
+      "nomeEstadio": "Nome Estadio"
     }
   }
 }

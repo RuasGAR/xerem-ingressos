@@ -45,9 +45,6 @@ class IngressoResourceIT {
     private static final LocalDate DEFAULT_DATA = LocalDate.ofEpochDay(0L);
     private static final LocalDate UPDATED_DATA = LocalDate.now(ZoneId.systemDefault());
 
-    private static final String DEFAULT_NOME_ESTADIO = "AAAAAAAAAA";
-    private static final String UPDATED_NOME_ESTADIO = "BBBBBBBBBB";
-
     private static final String DEFAULT_SETOR_ESTADIO = "AAAAAAAAAA";
     private static final String UPDATED_SETOR_ESTADIO = "BBBBBBBBBB";
 
@@ -107,7 +104,6 @@ class IngressoResourceIT {
             .timeMandante(DEFAULT_TIME_MANDANTE)
             .timeVisitante(DEFAULT_TIME_VISITANTE)
             .data(DEFAULT_DATA)
-            .nomeEstadio(DEFAULT_NOME_ESTADIO)
             .setorEstadio(DEFAULT_SETOR_ESTADIO)
             .assentoEstadio(DEFAULT_ASSENTO_ESTADIO)
             .nomeComprador(DEFAULT_NOME_COMPRADOR)
@@ -132,7 +128,6 @@ class IngressoResourceIT {
             .timeMandante(UPDATED_TIME_MANDANTE)
             .timeVisitante(UPDATED_TIME_VISITANTE)
             .data(UPDATED_DATA)
-            .nomeEstadio(UPDATED_NOME_ESTADIO)
             .setorEstadio(UPDATED_SETOR_ESTADIO)
             .assentoEstadio(UPDATED_ASSENTO_ESTADIO)
             .nomeComprador(UPDATED_NOME_COMPRADOR)
@@ -166,7 +161,6 @@ class IngressoResourceIT {
             .andExpect(jsonPath("$.[*].timeMandante").value(hasItem(DEFAULT_TIME_MANDANTE)))
             .andExpect(jsonPath("$.[*].timeVisitante").value(hasItem(DEFAULT_TIME_VISITANTE)))
             .andExpect(jsonPath("$.[*].data").value(hasItem(DEFAULT_DATA.toString())))
-            .andExpect(jsonPath("$.[*].nomeEstadio").value(hasItem(DEFAULT_NOME_ESTADIO)))
             .andExpect(jsonPath("$.[*].setorEstadio").value(hasItem(DEFAULT_SETOR_ESTADIO)))
             .andExpect(jsonPath("$.[*].assentoEstadio").value(hasItem(DEFAULT_ASSENTO_ESTADIO)))
             .andExpect(jsonPath("$.[*].nomeComprador").value(hasItem(DEFAULT_NOME_COMPRADOR)))
@@ -194,7 +188,6 @@ class IngressoResourceIT {
             .andExpect(jsonPath("$.timeMandante").value(DEFAULT_TIME_MANDANTE))
             .andExpect(jsonPath("$.timeVisitante").value(DEFAULT_TIME_VISITANTE))
             .andExpect(jsonPath("$.data").value(DEFAULT_DATA.toString()))
-            .andExpect(jsonPath("$.nomeEstadio").value(DEFAULT_NOME_ESTADIO))
             .andExpect(jsonPath("$.setorEstadio").value(DEFAULT_SETOR_ESTADIO))
             .andExpect(jsonPath("$.assentoEstadio").value(DEFAULT_ASSENTO_ESTADIO))
             .andExpect(jsonPath("$.nomeComprador").value(DEFAULT_NOME_COMPRADOR))

@@ -28,6 +28,12 @@ const ProcessoIngresso_PagamentoExecute = () => import('@/entities/processo-ingr
 const ProcessoIngresso_ConfirmacaoDetails = () => import('@/entities/processo-ingresso/confirmacao/confirmacao-details.vue');
 // prettier-ignore
 const ProcessoIngresso_ConfirmacaoExecute = () => import('@/entities/processo-ingresso/confirmacao/confirmacao-execute.vue');
+// prettier-ignore
+const Estadio = () => import('@/entities/estadio/estadio.vue');
+// prettier-ignore
+const EstadioUpdate = () => import('@/entities/estadio/estadio-update.vue');
+// prettier-ignore
+const EstadioDetails = () => import('@/entities/estadio/estadio-details.vue');
 // jhipster-needle-add-entity-to-router-import - JHipster will import entities to the router here
 
 export default [
@@ -107,6 +113,30 @@ export default [
     path: '/process-definition/ProcessoIngresso/task/Confirmacao/:taskInstanceId/execute',
     name: 'ProcessoIngresso_ConfirmacaoExecute',
     component: ProcessoIngresso_ConfirmacaoExecute,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/estadio',
+    name: 'Estadio',
+    component: Estadio,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/estadio/new',
+    name: 'EstadioCreate',
+    component: EstadioUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/estadio/:estadioId/edit',
+    name: 'EstadioEdit',
+    component: EstadioUpdate,
+    meta: { authorities: [Authority.USER] },
+  },
+  {
+    path: '/estadio/:estadioId/view',
+    name: 'EstadioView',
+    component: EstadioDetails,
     meta: { authorities: [Authority.USER] },
   },
   // jhipster-needle-add-entity-to-router - JHipster will add entities to the router here

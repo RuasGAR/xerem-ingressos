@@ -19,8 +19,6 @@ public class IngressoDTO implements Serializable {
 
     private LocalDate data;
 
-    private String nomeEstadio;
-
     private String setorEstadio;
 
     private String assentoEstadio;
@@ -38,6 +36,8 @@ public class IngressoDTO implements Serializable {
     private Integer codigoCartao;
 
     private String emailComprador;
+
+    private EstadioDTO nomeEstadio;
 
     public Long getId() {
         return id;
@@ -77,14 +77,6 @@ public class IngressoDTO implements Serializable {
 
     public void setData(LocalDate data) {
         this.data = data;
-    }
-
-    public String getNomeEstadio() {
-        return nomeEstadio;
-    }
-
-    public void setNomeEstadio(String nomeEstadio) {
-        this.nomeEstadio = nomeEstadio;
     }
 
     public String getSetorEstadio() {
@@ -159,6 +151,14 @@ public class IngressoDTO implements Serializable {
         this.emailComprador = emailComprador;
     }
 
+    public EstadioDTO getNomeEstadio() {
+        return nomeEstadio;
+    }
+
+    public void setNomeEstadio(EstadioDTO nomeEstadio) {
+        this.nomeEstadio = nomeEstadio;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -189,7 +189,6 @@ public class IngressoDTO implements Serializable {
             ", timeMandante='" + getTimeMandante() + "'" +
             ", timeVisitante='" + getTimeVisitante() + "'" +
             ", data='" + getData() + "'" +
-            ", nomeEstadio='" + getNomeEstadio() + "'" +
             ", setorEstadio='" + getSetorEstadio() + "'" +
             ", assentoEstadio='" + getAssentoEstadio() + "'" +
             ", nomeComprador='" + getNomeComprador() + "'" +
@@ -199,6 +198,7 @@ public class IngressoDTO implements Serializable {
             ", validadeCartao='" + getValidadeCartao() + "'" +
             ", codigoCartao=" + getCodigoCartao() +
             ", emailComprador='" + getEmailComprador() + "'" +
+            ", nomeEstadio=" + getNomeEstadio() +
             "}";
     }
 }

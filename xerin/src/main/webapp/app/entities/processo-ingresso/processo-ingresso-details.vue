@@ -72,20 +72,6 @@
               </div>
               <div class="card-body py-0">
                 <div class="form-group">
-                  <label class="form-control-label" v-text="$t('xeremIngressosApp.processoIngresso.nomeEstadio')">nomeEstadio</label>
-                  <input
-                    readonly
-                    type="text"
-                    class="form-control"
-                    name="nomeEstadio"
-                    id="ingresso-nomeEstadio"
-                    data-cy="nomeEstadio"
-                    v-model="processoIngresso.ingresso.nomeEstadio"
-                  />
-                </div>
-              </div>
-              <div class="card-body py-0">
-                <div class="form-group">
                   <label class="form-control-label" v-text="$t('xeremIngressosApp.processoIngresso.setorEstadio')">setorEstadio</label>
                   <input
                     readonly
@@ -209,6 +195,36 @@
                     id="ingresso-emailComprador"
                     data-cy="emailComprador"
                     v-model="processoIngresso.ingresso.emailComprador"
+                  />
+                </div>
+              </div>
+              <div class="card-body py-0">
+                <div class="form-group">
+                  <label
+                    class="form-control-label"
+                    v-text="$t('xeremIngressosApp.processoIngresso.nomeEstadio')"
+                    for="processo-ingresso-nomeEstadio"
+                    >Nome Estadio</label
+                  >
+                  <input
+                    v-if="processoIngresso.ingresso.nomeEstadio"
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="nomeEstadio"
+                    id="ingresso-nomeEstadio"
+                    data-cy="nomeEstadio"
+                    :value="processoIngresso.ingresso.nomeEstadio.nome"
+                  />
+                  <input
+                    v-else
+                    readonly
+                    type="text"
+                    class="form-control"
+                    name="nomeEstadio"
+                    id="ingresso-nomeEstadio"
+                    data-cy="nomeEstadio"
+                    value=""
                   />
                 </div>
               </div>

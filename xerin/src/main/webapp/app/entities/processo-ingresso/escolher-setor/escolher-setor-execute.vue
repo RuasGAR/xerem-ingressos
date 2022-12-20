@@ -9,23 +9,6 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('xeremIngressosApp.escolherSetor.nomeEstadio')" for="escolher-setor-nomeEstadio"
-                >Nome Estadio</label
-              >
-              <input
-                type="text"
-                class="form-control"
-                name="nomeEstadio"
-                id="escolher-setor-nomeEstadio"
-                data-cy="nomeEstadio"
-                :class="{
-                  valid: !$v.taskContext.processoIngresso.ingresso.nomeEstadio.$invalid,
-                  invalid: $v.taskContext.processoIngresso.ingresso.nomeEstadio.$invalid,
-                }"
-                v-model="$v.taskContext.processoIngresso.ingresso.nomeEstadio.$model"
-              />
-            </div>
-            <div class="form-group">
               <label
                 class="form-control-label"
                 v-text="$t('xeremIngressosApp.escolherSetor.setorEstadio')"
@@ -64,6 +47,32 @@
                 }"
                 v-model="$v.taskContext.processoIngresso.ingresso.assentoEstadio.$model"
               />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('xeremIngressosApp.escolherSetor.nomeEstadio')" for="escolher-setor-nomeEstadio"
+                >Nome Estadio</label
+              >
+              <select
+                class="form-control"
+                id="escolher-setor-nomeEstadio"
+                data-cy="nomeEstadio"
+                name="nomeEstadio"
+                v-model="taskContext.processoIngresso.ingresso.nomeEstadio"
+              >
+                <option v-bind:value="null"></option>
+                <option
+                  v-bind:value="
+                    taskContext.processoIngresso.ingresso.nomeEstadio &&
+                    EstadioOption.id === taskContext.processoIngresso.ingresso.nomeEstadio.id
+                      ? taskContext.processoIngresso.ingresso.nomeEstadio
+                      : EstadioOption
+                  "
+                  v-for="EstadioOption in Estadios"
+                  :key="EstadioOption.id"
+                >
+                  {{ EstadioOption.nome }}
+                </option>
+              </select>
             </div>
           </template>
         </akip-show-task-instance>

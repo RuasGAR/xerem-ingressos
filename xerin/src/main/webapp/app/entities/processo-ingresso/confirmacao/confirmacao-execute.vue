@@ -95,7 +95,7 @@
                   valid: !$v.taskContext.processoIngresso.ingresso.nomeEstadio.$invalid,
                   invalid: $v.taskContext.processoIngresso.ingresso.nomeEstadio.$invalid,
                 }"
-                v-model="$v.taskContext.processoIngresso.ingresso.nomeEstadio.$model"
+                v-model="$v.taskContext.processoIngresso.ingresso.nomeEstadio.$model.nome"
               />
             </div>
             <div class="form-group">

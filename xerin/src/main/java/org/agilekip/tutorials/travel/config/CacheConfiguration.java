@@ -50,6 +50,7 @@ public class CacheConfiguration {
             createCache(cm, org.agilekip.tutorials.travel.domain.User.class.getName() + ".authorities");
             createCache(cm, org.agilekip.tutorials.travel.domain.Ingresso.class.getName());
             createCache(cm, org.agilekip.tutorials.travel.domain.ProcessoIngresso.class.getName());
+            createCache(cm, org.agilekip.tutorials.travel.domain.Estadio.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

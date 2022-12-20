@@ -22,7 +22,11 @@
     <include file="config/liquibase/changelog/20210401000003_added_entity_EscolherSetor.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210401000004_added_entity_Pagamento.xml" relativeToChangelogFile="false"/>
     <include file="config/liquibase/changelog/20210401000004_added_entity_Confirmacao.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000001_added_entity_Estadio.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-changelog - JHipster will add liquibase changelogs here -->
+    <include file="config/liquibase/changelog/20210401000001_added_entity_constraints_Ingresso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000002_added_entity_constraints_ProcessoIngresso.xml" relativeToChangelogFile="false"/>
+    <include file="config/liquibase/changelog/20210401000003_added_entity_constraints_EscolherSetor.xml" relativeToChangelogFile="false"/>
     <!-- jhipster-needle-liquibase-add-constraints-changelog - JHipster will add liquibase constraints changelogs here -->
     <!-- jhipster-needle-liquibase-add-incremental-changelog - JHipster will add incremental liquibase changelogs here -->
 </databaseChangeLog>

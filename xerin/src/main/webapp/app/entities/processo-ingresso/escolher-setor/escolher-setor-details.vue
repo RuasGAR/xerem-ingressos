@@ -9,18 +9,6 @@
           <template v-slot:body>
             <hr />
             <div class="form-group">
-              <label class="form-control-label" v-text="$t('xeremIngressosApp.escolherSetor.nomeEstadio')">nomeEstadio</label>
-              <input
-                readonly
-                type="text"
-                class="form-control"
-                name="nomeEstadio"
-                id="ingresso-nomeEstadio"
-                data-cy="nomeEstadio"
-                v-model="taskContext.processoIngresso.ingresso.nomeEstadio"
-              />
-            </div>
-            <div class="form-group">
               <label class="form-control-label" v-text="$t('xeremIngressosApp.escolherSetor.setorEstadio')">setorEstadio</label>
               <input
                 readonly
@@ -42,6 +30,31 @@
                 id="ingresso-assentoEstadio"
                 data-cy="assentoEstadio"
                 v-model="taskContext.processoIngresso.ingresso.assentoEstadio"
+              />
+            </div>
+            <div class="form-group">
+              <label class="form-control-label" v-text="$t('xeremIngressosApp.escolherSetor.nomeEstadio')" for="escolher-setor-nomeEstadio"
+                >Nome Estadio</label
+              >
+              <input
+                v-if="taskContext.processoIngresso.ingresso.nomeEstadio"
+                readonly
+                type="text"
+                class="form-control"
+                name="nomeEstadio"
+                id="ingresso-nomeEstadio"
+                data-cy="nomeEstadio"
+                :value="taskContext.processoIngresso.ingresso.nomeEstadio.nome"
+              />
+              <input
+                v-else
+                readonly
+                type="text"
+                class="form-control"
+                name="nomeEstadio"
+                id="ingresso-nomeEstadio"
+                data-cy="nomeEstadio"
+                value=""
               />
             </div>
           </template>

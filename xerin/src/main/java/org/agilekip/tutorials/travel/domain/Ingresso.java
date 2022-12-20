@@ -33,9 +33,6 @@ public class Ingresso implements Serializable {
     @Column(name = "data")
     private LocalDate data;
 
-    @Column(name = "nome_estadio")
-    private String nomeEstadio;
-
     @Column(name = "setor_estadio")
     private String setorEstadio;
 
@@ -62,6 +59,9 @@ public class Ingresso implements Serializable {
 
     @Column(name = "email_comprador")
     private String emailComprador;
+
+    @ManyToOne
+    private Estadio nomeEstadio;
 
     // jhipster-needle-entity-add-field - JHipster will add fields here
     public Long getId() {
@@ -127,19 +127,6 @@ public class Ingresso implements Serializable {
 
     public void setData(LocalDate data) {
         this.data = data;
-    }
-
-    public String getNomeEstadio() {
-        return this.nomeEstadio;
-    }
-
-    public Ingresso nomeEstadio(String nomeEstadio) {
-        this.nomeEstadio = nomeEstadio;
-        return this;
-    }
-
-    public void setNomeEstadio(String nomeEstadio) {
-        this.nomeEstadio = nomeEstadio;
     }
 
     public String getSetorEstadio() {
@@ -259,6 +246,19 @@ public class Ingresso implements Serializable {
         this.emailComprador = emailComprador;
     }
 
+    public Estadio getNomeEstadio() {
+        return this.nomeEstadio;
+    }
+
+    public Ingresso nomeEstadio(Estadio Estadio) {
+        this.setNomeEstadio(Estadio);
+        return this;
+    }
+
+    public void setNomeEstadio(Estadio Estadio) {
+        this.nomeEstadio = Estadio;
+    }
+
     // jhipster-needle-entity-add-getters-setters - JHipster will add getters and setters here
 
     @Override
@@ -287,7 +287,6 @@ public class Ingresso implements Serializable {
             ", timeMandante='" + getTimeMandante() + "'" +
             ", timeVisitante='" + getTimeVisitante() + "'" +
             ", data='" + getData() + "'" +
-            ", nomeEstadio='" + getNomeEstadio() + "'" +
             ", setorEstadio='" + getSetorEstadio() + "'" +
             ", assentoEstadio='" + getAssentoEstadio() + "'" +
             ", nomeComprador='" + getNomeComprador() + "'" +
